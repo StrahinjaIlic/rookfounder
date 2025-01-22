@@ -1,0 +1,81 @@
+@font-face {
+	font-family: 'GeneralSans-Light';
+	src: url('/fonts/GeneralSans-Light.woff2') format('woff2'),
+	url('/fonts/GeneralSans-Light.woff') format('woff'),
+	url('/fonts/GeneralSans-Light.ttf') format('truetype');
+	font-weight: 300;
+	font-display: swap;
+	font-style: normal;
+}
+
+
+@font-face {
+	font-family: 'GeneralSans-Regular';
+	src: url('/fonts/GeneralSans-Regular.woff2') format('woff2'),
+	url('/fonts/GeneralSans-Regular.woff') format('woff'),
+	url('/fonts/GeneralSans-Regular.ttf') format('truetype');
+	font-weight: 400;
+	font-display: swap;
+	font-style: normal;
+}
+
+
+@font-face {
+	font-family: 'GeneralSans-Italic';
+	src: url('/fonts/GeneralSans-Italic.woff2') format('woff2'),
+	url('/fonts/GeneralSans-Italic.woff') format('woff'),
+	url('/fonts/GeneralSans-Italic.ttf') format('truetype');
+	font-weight: 400;
+	font-display: swap;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'GeneralSans-Medium';
+	src: url('/fonts/GeneralSans-Medium.woff2') format('woff2'),
+	url('/fonts/GeneralSans-Medium.woff') format('woff'),
+	url('/fonts/GeneralSans-Medium.ttf') format('truetype');
+	font-weight: 500;
+	font-display: swap;
+	font-style: normal;
+}
+
+
+@font-face {
+	font-family: 'GeneralSans-Bold';
+	src: url('/fonts/GeneralSans-Bold.woff2') format('woff2'),
+	url('/fonts/GeneralSans-Bold.woff') format('woff'),
+	url('/fonts/GeneralSans-Bold.ttf') format('truetype');
+	font-weight: 700;
+	font-display: swap;
+	font-style: normal;
+}
+
+
+
+
+
+/* ========== Typography styles ========== */
+
+a, button{ text-decoration: none; @include transition(all .2s ease); cursor: pointer }
+
+.button {
+	font-size: 16px;
+	font-family: $primaryFontMedium;
+	background-color: #FFD700;
+	color: #000;
+	height: 48px;
+	line-height: 48px;
+	padding: 0 20px;
+	@include borderRadius(6px);
+
+	&:hover {
+		background-color: #e1be00;
+		@include transition(0.2s);
+	}
+}
+
+.text-center { text-align: center !important}
+.text-left { text-align: left !important}
+.text-right { text-align: right !important}
+

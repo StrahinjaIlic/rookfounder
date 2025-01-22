@@ -1,0 +1,205 @@
+@mixin transition($args) {
+	-webkit-transition: $args;
+	-moz-transition: $args;
+	-ms-transition: $args;
+	-o-transition: $args;
+	transition: $args;
+}
+
+@mixin transitionDelay($args) {
+	-webkit-transition-delay: $args;
+	-moz-transition-delay: $args;
+	-ms-transition-delay: $args;
+	-o-transition-delay: $args;
+	transition-delay: $args;
+}
+
+@mixin multiTransition($transitions...) {
+	$unfoldedTransitions: ();
+	@each $transition in $transitions {
+		$unfoldedTransitions: append($unfoldedTransitions, unfoldTransition($transition), comma);
+	}
+
+	-webkit-transition: $unfoldedTransitions;
+	transition: $unfoldedTransitions;
+}
+
+@function unfoldTransition ($transition) {
+	// Default values
+	$property: all;
+	$duration: .2s;
+	$easing: null; // Browser default is ease, which is what we want
+	$delay: null; // Browser default is 0, which is what we want
+	$defaultProperties: ($property, $duration, $easing, $delay);
+
+	// Grab transition properties if they exist
+	$unfoldedTransition: ();
+	@for $i from 1 through length($defaultProperties) {
+		$p: null;
+		@if $i <= length($transition) {
+			$p: nth($transition, $i)
+		} @else {
+			$p: nth($defaultProperties, $i)
+		}
+		$unfoldedTransition: append($unfoldedTransition, $p);
+	}
+
+	@return $unfoldedTransition;
+}
+//@include transition(color .3s ease);
+
+@mixin borderRadius($args) {
+	-webkit-border-radius: $args;
+	-moz-border-radius: $args;
+	border-radius: $args;
+}
+//@include borderRadius(13px);
+
+@mixin appearance($args) {
+	-webkit-appearance: $args;
+	-moz-appearance: $args;
+	appearance: $args;
+}
+//@include appearance(none);
+
+@mixin boxShadow($args) {
+	-webkit-box-shadow: $args;
+	-moz-box-shadow: $args;
+	box-shadow: $args;
+}
+//@include boxShadow(10px 10px 5px 0px rgba(0,0,0,0.75));
+
+@mixin boxSizing($args) {
+	-webkit-box-sizing: $args;
+	-moz-box-sizing: $args;
+	box-sizing: $args;
+}
+//@include boxSizing(border-box);
+
+@mixin transformStyle($args) {
+	-webkit-transform-style: $args;
+	-moz-transform-style: $args;
+	-ms-transform-style: $args;
+	transform-style: $args;
+}
+
+@mixin transform($args) {
+	-webkit-transform: $args;
+	-moz-transform: $args;
+	-ms-transform: $args;
+	-o-transform: $args;
+	transform: $args;
+}
+
+@mixin filter($args) {
+	-webkit-filter: $args;
+	-moz-filter: $args;
+	-ms-filter: $args;
+	-o-filter: $args;
+	filter: $args;
+}
+
+@mixin animationDuration($args) {
+	animation-duration: $args;
+	-webkit-animation-duration: $args;
+}
+
+@mixin transitionTiming($args) {
+	transition-timing-function: $args;
+	-webkit-transition-timing-function: $args;
+}
+
+@mixin animationFillMode($args) {
+	animation-fill-mode: $args;
+	-webkit-animation-fill-mode: $args;
+}
+
+@mixin animationDelay($args) {
+	-webkit-animation-delay: $args;
+	animation-delay: $args;
+}
+
+@mixin viewport-unit($property, $value) {
+	#{$property}: $value;
+
+	$unit: unit($value);
+
+	@if (index((vw, vh, vmin, vmax), $unit) != null) {
+		$devices: (
+			(1024px, 1366px),	// iPad Pro
+			(768px, 1024px),	// iPad (all versions)
+			(320px, 480px),		// iPhone 4
+			(320px, 568px),		// iPhone 5, 5C, 5S
+			(375px, 667px),		// iPhone 6
+			(414px, 736px)		// iPhone 6+
+		);
+
+		@each $device in $devices {
+			$device-width: nth($device, 1);
+			$device-height: nth($device, 2);
+
+			$device-query: "only screen and (-webkit-min-device-pixel-ratio: 1)";
+			$device-query: "#{$device-query} and (device-width: #{$device-width})";
+			$device-query: "#{$device-query} and (device-height: #{$device-height})";
+
+			$percent: $value / ($value * 0 + 1); // see https://github.com/sass/sass/issues/533
+
+			$percent-width: $device-width * $percent / 100;
+			$percent-height: $device-height * $percent / 100;
+
+			@if ($unit == vmin or $unit == vmax) {
+				@media #{$device-query} {
+					#{$property}: if($unit == vmin, $percent-width, $percent-height);
+				}
+			}
+			@else {
+				@media #{$device-query} and (orientation: portrait) {
+					#{$property}: if($unit == vw, $percent-width, $percent-height);
+				}
+
+				@media #{$device-query} and (orientation: landscape) {
+					#{$property}: if($unit == vw, $percent-height, $percent-width);
+				}
+			}
+		}
+	}
+}
+
+@keyframes flip {
+	from {
+		transform: perspective(400px) rotate3d(0, 1, 0, -360deg);
+		animation-timing-function: ease-out;
+	}
+
+	40% {
+		transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -190deg);
+		animation-timing-function: ease-out;
+	}
+
+	50% {
+		transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -170deg);
+		animation-timing-function: ease-in;
+	}
+
+	80% {
+		transform: perspective(400px);
+		animation-timing-function: ease-in;
+	}
+
+	to {
+		transform: perspective(400px);
+		animation-timing-function: ease-in;
+	}
+}
+.animated {
+	animation-duration: 1s;
+	animation-fill-mode: both;
+	&.flip {
+		-webkit-backface-visibility: visible;
+		backface-visibility: visible;
+		animation-name: flip;
+	}
+	&.infinite {
+		animation-iteration-count: infinite;
+	}
+}

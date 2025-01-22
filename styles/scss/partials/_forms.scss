@@ -1,0 +1,391 @@
+.field {
+	margin-bottom: 25px;
+	position: relative;
+	input {
+		width: 100%;
+		display: block;
+		padding: 0 15px;
+		color: #fff;
+		height: 50px;
+		line-height: 50px;
+		background-color: #6D7874;
+		border: 1px solid #FFD700;
+		font-size: 16px;
+		@include borderRadius(8px);
+		@include transition(0.2s);
+
+		&[type="file"] {
+			display: none;
+		}
+
+		&:hover {
+
+		}
+
+		&:focus {
+
+		}
+
+		&::placeholder {
+			color: #fff;
+		}
+
+	}
+
+	textarea {
+		width: 100%;
+		color: #fff;
+		height: 250px;
+		padding: 15px;
+		background-color: #6D7874;
+		border:1px solid #FFD700;
+		font-size: 16px;
+		resize: none;
+		@include borderRadius(8px);
+
+		&:hover {
+			background-color: #6D7874;
+		}
+
+		&:focus {
+			background-color: #6D7874;
+		}
+
+		&::placeholder {
+			color: #fff;
+		}
+	}
+
+	label {
+		font-family: $primaryFontRegular;
+		font-size: 16px;
+		text-transform: uppercase;
+		padding-bottom: 10px;
+		padding-left: 20px;
+		display: inline-block;
+		color: #fff;
+	}
+
+	.warning-text {
+		position: absolute;
+		color: darkred;
+		font-size: 12px;
+		font-family: $primaryFontRegular;
+		font-style: italic;
+		bottom: -17px;
+		left: 14px;
+		display: none;
+
+		&.warning-text-area {
+			bottom: 3px;
+		}
+
+		@media only screen and #{$maxTabletLand} {
+			font-size: 9px;
+			bottom: -12px;
+		}
+	}
+
+	.warning {
+		border:1px solid darkred;
+	}
+}
+
+
+.filed-file {
+	width: 100%;
+	display: block;
+	padding: 0;
+	color: $textColor;
+	height: 50px;
+	line-height: 50px;
+	background-color: #EBEBEB;
+	border:1px dashed #707070;
+	font-size: 15px;
+	@include borderRadius(4px);
+	@include transition(0.2s);
+
+	label {
+		padding: 0 15px;
+		display: block;
+		width: 100%;
+		height: 50px;
+		line-height: 50px;
+
+		span {
+			display: block;
+			width: 100%;
+			height: 50px;
+			line-height: 50px;
+		}
+	}
+
+
+	@media only screen and #{$phone} {
+		background-color: #fff;
+		height: 40px;
+		line-height: 40px;
+
+		label {
+			height: 40px;
+			line-height: 40px;
+			font-size: 9px !important;
+			padding: 0 5px 0 15px;
+
+			span {
+				height: 40px;
+				line-height: 40px;
+				font-size: 10px !important;
+			}
+		}
+	}
+
+	@media only screen and #{$mPhone} {
+
+		label {
+			font-size: 9px !important;
+
+			span {
+				font-size: 8px !important;
+			}
+		}
+	}
+
+
+
+}
+
+
+.checkbox {
+	padding: 0 0 10px 0;
+	margin-left: 4px;
+	display: inline-block;
+	&:last-child {
+		padding: 0;
+	}
+
+	label {
+		font-family: $primaryFontRegular;
+		font-size: 15px;
+		color: #757575;
+		display: inline-block;
+		padding: 0 0 0 35px;
+		margin-bottom: 10px;
+		position: relative;
+		cursor: pointer;
+		margin-top: 5px;
+		margin-right: 20px;
+		line-height: 16px;
+		&:before {
+			width: 23px;
+			height: 23px;
+			content: '';
+			position: absolute;
+			top: -6px;
+			left: 0;
+			border: 1px solid #d8d8d8;
+			background: #fff;
+			@include borderRadius(1px);
+			@include transition(all 0.2s ease-out);
+			@include boxShadow(0px 1px 2px 0px rgba(0, 0, 0, 0.06));
+		}
+		&:after {
+			width: 14px;
+			height: 7px;
+			content: '';
+			position: absolute;
+			top: 0px;
+			left: 5px;
+			border: 3px solid transparent;
+			border-top: none;
+			border-right: none;
+			background: transparent;
+			@include transform(rotate(-45deg));
+			@include transition(all 0.2s ease);
+		}
+		&:hover {
+
+		}
+		&:hover:before {
+			border: 1px solid $textColor;
+		}
+
+		span {
+			position: absolute;
+			right: 0;
+			top: 2px;
+			font-size: 12px;
+			color: #b8bcca;
+			text-align: right;
+		}
+	}
+
+	input {
+		visibility: hidden;
+		position: absolute;
+
+		&:checked + label {
+			color:#757575 !important;
+		}
+
+		&:checked + label:before {
+			border: 1px solid $primaryColor;
+			background: $primaryColor;
+		}
+
+		&:checked + label:after {
+			border-left: 3px solid #fff;
+			border-bottom: 3px solid #fff;
+			border-top: 0 solid transparent;
+			border-right: 0 solid transparent;
+		}
+	}
+
+
+	&.checkbox-right {
+
+		label {
+			padding: 0 60px 0 15px;
+			&:before {
+				top: -10px;
+				left: initial;
+				right: 0;
+
+			}
+			&:after {
+				top: 1px;
+				left: initial;
+				right: 10px;
+
+			}
+		}
+	}
+
+	&.checkbox-small {
+		label {
+			padding: 0 0 0 45px;
+
+			&:before {
+				width: 26px;
+				height: 26px;
+				margin-top: 5px;
+				background: #fff;
+				@include borderRadius(1px);
+				@include transition(all 0.2s ease-out);
+				@include boxShadow(0px 1px 2px 0px rgba(0, 0, 0, 0.06));
+			}
+			&:after {
+				width: 16px;
+				height: 10px;
+				content: '';
+				position: absolute;
+				top: 1px;
+				left: 6px;
+				border: 3px solid transparent;
+				background: transparent;
+				@include transform(rotate(-45deg));
+				@include transition(all 0.2s ease);
+			}
+		}
+	}
+}
+
+
+.checkbox-holder {
+	margin-top: 30px;
+
+	.checkbox {
+		display: inline-block;
+
+		&:last-child {
+			margin-left: 40px;
+		}
+	}
+
+	@media only screen and #{$phone} {
+		.checkbox {
+			display: block;
+
+			&:last-child {
+				margin-left: 0;
+			}
+		}
+	}
+}
+
+
+.radio-set {
+	display: inline-block;
+	line-height: inherit;
+	margin: 0;
+	padding: 0;
+	margin-right: 15px;
+
+	label {
+		font-family: $primaryFontRegular;
+		display: inline-block;
+		position: relative;
+		cursor: pointer;
+		font-size: $fontSize16;
+		line-height: 20px;
+		color: $darkColors;
+
+
+		span {
+			margin-left: 30px;
+			line-height: 20px;
+			display: block;
+			text-align: left;
+			font-size: $fontSize16;
+			color: $darkColors;
+		}
+
+		&:before {
+			position: absolute;
+			content: "";
+			width: 20px;
+			height: 20px;
+			text-align: center;
+			padding: 0;
+			margin: 0;
+			background-color: transparent;
+			margin-left: -3px;
+			border: 2px solid $darkColors;
+			@include borderRadius(100%);
+			@include transition(all 0.2s ease);
+		}
+
+		&:after {
+			position: absolute;
+			content: "";
+			top: 5px;
+			left: 2px;
+			width: 10px;
+			height: 10px;
+			background-color: transparent;
+			@include borderRadius(100%);
+			@include transition(all 0.2s ease);
+		}
+
+	}
+
+	input {
+		visibility: hidden;
+		height: 0;
+		&:checked + label:after {
+			@include transition(all 0.2s ease);
+			background: $darkColors;
+			border: 2px solid $darkColors;
+			color: #000;
+		}
+
+		&:checked + label:hover {
+			&:after {
+				@include transition(all 0.2s ease);
+				background: $darkColors;
+				border: 2px solid $darkColors;
+				color: #000;
+			}
+		}
+	}
+}

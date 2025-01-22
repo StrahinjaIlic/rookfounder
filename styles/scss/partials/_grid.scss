@@ -1,0 +1,260 @@
+/*======================= Grid ===========================*/
+.row {
+	width: auto; display: block; margin: 0 -5px; position: relative; clear: both;
+	&:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+	@media only screen and #{$phone} {
+		margin: 0;
+	}
+	> .column {
+		padding: 0 5px;
+		float: left;
+
+		&.pull-right {
+			float: right;
+		}
+
+		&.tablet-hide {
+			@media only screen and #{$maxTabletLand} {
+				display: none;
+			}
+		}
+
+		&.sm-tablet-hide {
+			@media only screen and #{$maxTabletPort} {
+				display: none;
+			}
+		}
+
+		&.masonry-column {
+			margin-bottom: 20px;
+		}
+
+		@media only screen and #{$phone} {
+			padding: 5px 0;
+		}
+
+		&.__12 { width: 100%; }
+		&.__11 { width: 91.666666%; }
+		&.__10 { width: 83.333333%; }
+		&.__9 { width: 75%; }
+		&.__8 { width: 66.666666%; }
+		&.__7 { width: 58.333333%; }
+		&.__6 { width: 50%; }
+		&.__5 { width: 41.666666%; }
+		&.__41 {width: 37%;}
+		&.__4 { width: 33.333333%; }
+		&.__3 { width: 25%; }
+		&.__2 { width: 16.666666%; }
+		&.__1 { width: 8.333333%; }
+
+		// Grid cells under 1366px
+		@media only screen and #{$maxLaptop} {
+			&.llt__12 { width: 100%; }
+			&.llt__8 { width: 66.666666%; }
+			&.llt__4 { width: 33.333333%; }
+		}
+
+		// Grid cells under 1279px
+		@media only screen and #{$maxTabletLand} {
+			&.lt__6 { width: 100%; }
+			&.lt__5 { width: 83.333333%; }
+			&.lt__4 { width: 66.666666%; }
+			&.lt__3 { width: 50%; }
+			&.lt__2 { width: 33.333333%; }
+			&.lt__1 { width: 16.666666%; }
+		}
+		// Grid cells under 1023px
+		@media only screen and #{$maxTabletPort} {
+			&.st__6 {width: 100%; }
+			&.st__5 { width: 83.333333%; }
+			&.st__4 { width: 66.666666%; }
+			&.st__3 { width: 50%; }
+			&.st__2 { width: 33.333333%; }
+			&.st__1 { width: 16.666666%; }
+			&.st__hide { display: none }
+		}
+		// Grid cells under 767px
+		@media only screen and #{$phone} {
+			&.m__3, &.__12, &.__11, &.__10, &.__9, &.__8,&.__7, &.__6,&.__5, &.__4,&.__3, &.__2,&.__1, &.lt__6, &.lt__5, &.lt__4 , &.lt__3, &.lt__2, &.lt__1, &.st__6, &.st__5, &.st__4, &.st__3, &.st__2, &.st__1 { width: 100%; }
+			&.m__1 { width: 33.333333%; padding: 5px}
+			&.m__2 { width: 66.333333%; padding: 5px}
+			&.no-padding {
+				padding: 0 !important;
+			}
+		}
+	}
+
+	// Block Grid
+	&.block-row {
+		&.__1-block {
+			> .column { width: 100%; }
+		}
+		&.__2-block {
+			> .column { width: 50%; }
+		}
+		&.__3-block {
+			> .column { width: 33.3333333%; }
+		}
+		&.__4-block {
+			> .column { width: 25%; }
+		}
+		&.__5-block {
+			> .column { width: 20%; }
+		}
+		&.__6-block {
+			> .column { width: 16.666666666%; }
+		}
+		&.__7-block {
+			> .column { width: 14.285714%; }
+		}
+		&.__8-block {
+			> .column { width: 12.5%; }
+		}
+
+		@media only screen and #{$maxTabletLand} {
+			&.lt__1-block {
+				> .column { width: 100%; }
+			}
+			&.lt__2-block {
+				> .column { width: 50%; }
+			}
+			&.lt__3-block {
+				> .column { width: 33.3333333%; }
+			}
+			&.lt__4-block {
+				> .column { width: 25%; }
+			}
+			&.lt__5-block {
+				> .column { width: 20%; }
+			}
+			&.lt__6-block {
+				> .column { width: 16.666666666%; }
+			}
+		}
+
+		@media only screen and #{$maxTabletPort} {
+			&.st__1-block {
+				> .column { width: 100%; }
+			}
+			&.st__2-block {
+				> .column { width: 50%; }
+			}
+			&.st__3-block {
+				> .column { width: 33.3333333%; }
+			}
+			&.st__4-block {
+				> .column { width: 25%; }
+			}
+			&.st__5-block {
+				> .column { width: 20%; }
+			}
+			&.st__6-block {
+				> .column { width: 16.666666666%; }
+			}
+			> .column.st__6 {
+				width: 100%;
+			}
+		}
+		@media only screen and #{$phone} {
+			&.__1-block, &.__2-block, &.__3-block, &.__4-block,  &.__5-block, &.__6-block, &.__7-block, &.__8-block {
+				> .column { width: 100%; }
+			}
+			&.m__1-block {
+				> .column { width: 100%; }
+			}
+			&.m__2-block {
+				> .column { width: 50%; padding: 0 10px}
+			}
+			&.m__3-block {
+				> .column { width: 33.3333333%; }
+			}
+			&.m__4-block {
+				> .column { width: 25%; }
+			}
+		}
+	}
+
+	// Helper Classes
+	&.__0 {
+		margin: 0;
+		> .column { padding: 0; }
+	}
+
+	&.__5 {
+		margin: 0 -5px;
+		> .column { padding: 0 5px; }
+	}
+
+	&.__60 {
+		margin: 0 -30px;
+		> .column { padding: 0 30px; }
+		@media only screen and #{$maxTabletLand} {
+			margin: 0 -10px;
+			> .column { padding: 0 10px; }
+		}
+	}
+
+	&.__30 {
+		margin: 0 -15px;
+		> .column { padding: 0 15px; }
+		@media only screen and #{$maxTabletLand} {
+			margin: 0 -5px;
+			> .column { padding: 0 5px; }
+		}
+	}
+
+	&.__40 {
+		margin: 0 -20px;
+		> .column { padding: 0 20px; }
+		@media only screen and #{$maxTabletLand} {
+			margin: 0 -5px;
+			> .column { padding: 0 5px; }
+		}
+	}
+
+	&.__20 {
+		margin: 0 -10px;
+		> .column { padding: 0 10px; }
+	}
+
+	&.__inline-row {
+		text-align: center;
+		> .column {
+			display: inline-block;
+			float: none;
+			margin: 0 -2px 10px -2px;
+		}
+	}
+
+	&.__masonry {
+		margin: 0 -10px;
+		> .column {
+			margin-bottom: 20px;
+			padding: 0 10px;
+		}
+	}
+
+	// for 1 column only
+	&.__centered-row {
+		text-align: center;
+		> .column {
+			display: inline-block;
+			float: none;
+			margin: 0;
+		}
+	}
+
+	// for 1 column only on small devices
+	&.__centered-row-small {
+		@media only screen and #{$maxTabletLand} {
+			text-align: center;
+		}
+		> .column {
+			@media only screen and #{$maxTabletLand} {
+				display: inline-block;
+				float: none;
+				margin: 0;
+			}
+		}
+	}
+}

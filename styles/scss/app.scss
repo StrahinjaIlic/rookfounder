@@ -2,6 +2,8 @@
 @import "partials/mixins";
 @import "partials/reset";
 @import "partials/typography";
+@import "partials/helpers";
+@import "partials/modal";
 @import "partials/grid";
 @import "partials/forms";
 @import "partials/header";
@@ -68,7 +70,7 @@ body {
 	}
 
 	.intro-text {
-		padding-top: 40px;
+		padding-top: 80px;
 
 		h2 {
 			text-align: center;

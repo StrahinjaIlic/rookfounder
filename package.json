@@ -1,0 +1,14 @@
+{
+  "name": "natter",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "sass styles/scss:styles/css --watch",
+    "build": "sass styles/scss:styles/css --style compressed",
+    "serve": "http-server . -p 8080 -c-1"
+  },
+  "devDependencies": {
+    "sass": "^1.69.7",
+    "http-server": "^14.1.1"
+  }
+} 

@@ -74,8 +74,3 @@ a, button{ text-decoration: none; @include transition(all .2s ease); cursor: poi
 		@include transition(0.2s);
 	}
 }
-
-.text-center { text-align: center !important}
-.text-left { text-align: left !important}
-.text-right { text-align: right !important}
-

@@ -1105,7 +1105,7 @@ body {
 
 .inner {
   width: 1256px;
-  max-width: 94%;
+  max-width: 95%;
   margin: 0 auto;
   position: relative;
 }
@@ -1117,7 +1117,7 @@ body {
 
 .inner-text {
   width: 920px;
-  max-width: 94%;
+  max-width: 800px;
   margin: 0 auto;
   position: relative;
 }
@@ -1128,8 +1128,9 @@ body {
 }
 
 .content-wrap {
-  margin-top: 80px;
-  padding-bottom: 100px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 50px 20px;
 }
 .content-wrap hr {
   border-color: #fff;
@@ -1140,33 +1141,35 @@ body {
 .content-wrap .intro-text h2 {
   text-align: center;
   font-family: "GeneralSans-Bold";
-  font-size: 28px;
+  font-size: 58px;
+  font-weight: bold;
   line-height: 26px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   color: #ff9700;
 }
 .content-wrap .intro-text p {
-  font-size: 18px;
+  font-size: 22px;
   line-height: 22px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   text-align: center;
 }
 .content-wrap .intro-text p span {
-  font-size: 18px;
+  font-size: 24px;
   line-height: 22px;
   margin-bottom: 20px;
   text-align: center;
   text-decoration: underline;
 }
 .content-wrap .intro-text a {
-  font-size: 18px;
+  font-size: 22px;
+  font-family: "GeneralSans-Medium";
   line-height: 60px;
   background-color: #1b4eff;
   width: 420px;
   height: 60px;
   text-align: center;
   display: block;
-  margin: 0 auto 20px;
+  margin: 0 auto 40px;
   border: 1px solid #1b4eff;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -1185,29 +1188,31 @@ body {
 .content-wrap .text-wrap {
   padding-top: 80px;
 }
+/* Titles of sections */
 .content-wrap .text-wrap h2 {
   text-align: center;
   font-family: "GeneralSans-Bold";
-  font-size: 24px;
-  line-height: 28px;
-  margin-bottom: 20px;
+  font-size: 44px;
+  line-height: 44px;
+  margin-bottom: 30px;
 }
 .content-wrap .text-wrap h3 {
-  font-size: 22px;
+  font-size: 24px;
   line-height: 26px;
   margin-bottom: 20px;
-  font-weight: 600;
+  /* font-weight: 600; */
 }
 .content-wrap .text-wrap p {
-  font-size: 18px;
-  line-height: 22px;
-  margin-bottom: 20px;
+  font-size: 24px;
+  line-height: 26px;
+  margin-top: 20px;
+  margin-bottom: 40px;
 }
 .content-wrap .text-wrap p strong {
-  font-size: 18px;
-  line-height: 22px;
-  margin-bottom: 20px;
-  font-weight: 600;
+  font-size: 26px;
+  line-height: 26px;
+  margin-bottom: 30px;
+  /* font-weight: 600; */
 }
 .content-wrap .text-wrap p span {
   font-size: 18px;
@@ -1222,7 +1227,7 @@ body {
   text-decoration: underline;
 }
 .content-wrap .text-wrap ul li {
-  font-size: 18px;
+  font-size: 22px;
   line-height: 22px;
   margin-bottom: 10px;
   position: relative;
@@ -1254,7 +1259,7 @@ body {
   margin-top: 20px;
 }
 .link-wrap span {
-  font-size: 18px;
+  font-size: 22px;
   line-height: 22px;
   display: inline-block;
   margin-top: 16px;

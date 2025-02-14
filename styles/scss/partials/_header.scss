@@ -24,9 +24,10 @@ header {
 	}
 
 	@media only screen and #{$phone} {
-		height: 80px;
+		min-height: 80px;
+		height: auto;
+		padding-top: 14px;
 	}
-
 }
 
 

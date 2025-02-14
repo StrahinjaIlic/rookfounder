@@ -83,7 +83,7 @@ body {
 
 		p {
 			font-size: 18px;
-			line-height: 22px;
+			line-height: 1;
 			margin-bottom: 20px;
 			text-align: center;
 
@@ -93,6 +93,7 @@ body {
 				margin-bottom: 20px;
 				text-align: center;
 				text-decoration: underline;
+				vertical-align: baseline;
 			}
 		}
 
@@ -100,7 +101,7 @@ body {
 			font-size: 18px;
 			line-height: 60px;
 			background-color: #1b4eff;
-			width: 420px;
+			max-width: 420px;
 			height: 60px;
 			text-align: center;
 			display: block;

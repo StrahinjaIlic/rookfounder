@@ -1,780 +1,890 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Natter LLC</title>
-    <link rel="icon" type="image/svg+xml" href="/img/favicon.png"/>
+    <link rel="icon" type="image/svg+xml" href="/img/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1">
     <meta name="description" content="Natter LLC">
 
-    <link media="all" rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"/>
-    <link media="all" rel="stylesheet" type="text/css" href="/styles/css/app.css"/>
+    <link media="all" rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" />
+    <link media="all" rel="stylesheet" type="text/css" href="/styles/css/app.css" />
 
     <script async src="https://js.stripe.com/v3/buy-button.js"></script>
 </head>
+
 <body>
 
-<header>
-    <div class="inner">
-        <ul class="menu">
-            <li><a href="#bookacall">book a call</a></li>
-            <li><a href="#bestvalue">most value</a></li>
-            <li><a href="#otherservices">services</a></li>
-            <li><a href="#aboutus">about us</a></li>
-            <li><a href="#wegetasked">we get asked</a></li>
-        </ul>
-    </div>
-</header>
+    <header>
+        <div class="inner">
+            <ul class="menu">
+                <li><a href="#bookacall">book a call</a></li>
+                <li><a href="#bestvalue">most value</a></li>
+                <li><a href="#otherservices">services</a></li>
+                <li><a href="#aboutus">about us</a></li>
+                <li><a href="#wegetasked">we get asked</a></li>
+            </ul>
+        </div>
+    </header>
 
 
-<div class="content-wrap">
+    <div class="content-wrap">
 
-    <div id="bookacall" class="inner-text">
+        <div id="bookacall" class="inner-text">
 
-        <div class="intro-text">
-            <p style="color: #ff9700; font-size: 42px; font-weight: 700;">FLAWLESS REPUTATION</p>
-
-            <style>
-                .review-section {
-                    display: flex;
-                    align-items: stretch; /* Both boxes will be equal height */
-                    justify-content: space-between;
-                    background: transparent; /* Outside background fully transparent */
-                    padding: 40px;
-                    border-radius: 10px;
-                    margin-top: 30px;
-                    gap: 40px; /* Space between the two boxes */
-                }
-            
-                .review-box {
-                    width: 48%;
-                    padding: 25px;
-                    border-radius: 8px;
-                    background-color: #222; /* Background inside the border */
-                    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
-                    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Soft shadow */
-                }
-            
-                .review-title {
-                    color: white;
-                    font-size: 24px;
-                    font-weight: bold;
-                    margin-bottom: 15px;
-                }
-            
-                .review-list {
-                    list-style-type: disc; /* Use bullet style */
-                    padding-left: 20px;   /* Indent to display bullets properly */
-                    margin: 0;
-                }
-            
-                /* Spacing for list items in the left box */
-                .left-box .review-list li {
-                    color: white;
-                    font-size: 18px;
-                    margin-bottom: 20px;
-                }
-            
-                /* Spacing for list items in the right box */
-                .right-box .review-list li {
-                    color: white;
-                    font-size: 18px;
-                    margin-bottom: 30px;
-                }
-            
-                /* Style for "flawless reputation" inside the text */
-                .highlight {
-                    color: #ff9700; /* Same color as the title */
-                    font-weight: bold;
-                }
-            </style>
-            
-            <div class="review-section">
-                <!-- Left Box: REVIEW IMPACT -->
-                <div class="review-box left-box">
-                    <p class="review-title">REVIEW IMPACT: FEW FACTS</p>
-                    <br> <br> 
-                    <ul class="review-list">
-                        <li>22% of Potential Customers Are Lost Due to Negative Reviews</li>
-                        <li>90% of Buyers Check Reviews Before Purchasing</li>
-                        <li>57% of Customers Avoid Businesses Rated Below 4 Stars</li>
-                        <li>85% of Customers Trust Only Recent Reviews (Within 3 Months)</li>
-                        <li>Businesses That Respond to Reviews Are Perceived as 1.7× More Trustworthy</li>
-                        <li>Google Reviews Influence Up to 15.44% of SEO Rankings</li>
-                    </ul>
+            <!-- Humble Advisor Section with Improved UI -->
+            <div id="humbleadvisor" class="text-wrap"
+                style="text-align: center; padding: 80px 20px; background: transparent;">
+                <div style="max-width: 900px; margin: auto;">
+                    <p style="font-size: 22px; color: #ff9700; letter-spacing: 2px; text-transform: uppercase;">WE BUILD
+                    </p>
+                    <h2
+                        style="font-size: 58px; font-weight: 800; color: white; text-transform: uppercase; text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.2);">
+                        CUSTOM SOLUTIONS</h2>
+                    <p style="font-size: 20px; color: white; margin-top: 15px;">FOR AN</p>
+                    <h2 style="font-size: 50px; font-weight: 800; color: #2ecc71; text-transform: uppercase;">AI-POWERED
+                        SYSTEM</h2>
+                    <p style="font-size: 22px; color: white; margin-top: 15px;">THAT ELEVATES</p>
+                    <p style="font-size: 26px; font-weight: bold; color: white; letter-spacing: 1px;">EVERY ASPECT OF
+                        YOUR COMPANY</p>
                 </div>
-            
-                <!-- Right Box: WHAT OUR SYSTEM ACHIEVES -->
-                <div class="review-box right-box">
-                    <p class="review-title">WHAT OUR SYSTEM ACHIEVES</p>
-                    <br> <br> 
-                    <ul class="review-list">
-                        <li>Blocks All Negative Feedback</li>
-                        <li>Collects Every Positive Review</li>
-                        <li>Automates Personalized Responses</li>
-                        <li>Maximizes Google SEO Impact</li>
-                        <li>Strengthens Brand Authority</li>
-                        <li>A steady flow of positive reviews  <br>  builds trust and maintains a  <br>
-                            <span class="highlight">flawless reputation</span>, securing the company’s long-term growth.</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <br> <br>   <br> <br> 
-            <p>LET'S DO IT <span>TOGETHER</span> ON A <br></p>
 
-            <a href="javascript:void(0)" onclick="book()">
-                <i class="fas fa-calendar-check"></i> GAME CHANGING SESSION
-            </a>
+                <!-- Video Placeholder with Click-to-Play -->
+                <div style="text-align: center; margin: 50px auto; width: 80%; max-width: 900px;">
+                    <div
+                        style="position: relative; background: rgba(255, 255, 255, 0.1); border: 2px solid rgba(255, 255, 255, 0.2); border-radius: 12px; padding: 0; text-align: center; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);">
 
-            <!-- Add confirmation modal -->
-            <div id="confirmationModal" class="modal">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h2>Warning</h2>
-                        <span class="close-button">&times;</span>
-                    </div>
-                    <div class="modal-body">
-                        <p>Please do not schedule this consulting call unless you are confident that you can:</p>
-                        <ul class="mb-32">
-                            <li>Stay fully focused during the session to absorb a significant amount of new, actionable information.</li>
-                            <li>Adjust your mindset to align with modern advancements and leverage the latest tools for progress.</li>
-                            <li>Diligently implement the advice you'll receive until the results become undeniably clear.
-                            </li>
-                        </ul>
+                        <!-- Video Element (Click to Play) -->
+                        <video id="test_video" width="100%" height="auto" poster="img/video-thumbnail.jpg"
+                            style="border-radius: 12px;" controls>
+                            <source src="videos/test_video.mp4" type="video/mp4">
+                            <source src="videos/test_video.webm" type="video/webm">
+                            Your browser does not support the video tag.
+                        </video>
 
-                        <div class="text-center">
-                            <stripe-buy-button
-                                buy-button-id="buy_btn_1QhtVPKp4OMo88KHzOuxfKHN"
-                                publishable-key="pk_live_51PtFV3Kp4OMo88KHGpbtKrO6arKlMC225Qs9bLgh5f4o2m97wWTAwMYRwhefYW2FNZwpBErV4bbNRx0iGXJcrHsJ00k6L7dXXF"
-                            >
-                            </stripe-buy-button>
+                        <!-- Play Button Overlay -->
+                        <div id="playButton"
+                            style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 60px; color: white; cursor: pointer; opacity: 0.8;">
+                            ▶
                         </div>
                     </div>
                 </div>
+
+                <br> <br>
+                <!-- Book a Call Button -->
+                <div style="text-align: center; margin-top: 20px;">
+                    <a href="javascript:void(0)" onclick="book()" class="button"
+                        style="background: #ff9700; padding: 15px 30px; border-radius: 8px; font-size: 22px; font-weight: bold; color: black;">
+                        BOOK A CALL
+                    </a>
+                </div>
             </div>
-            <p>START 2025 WITH AN UNFAIR ADVANTAGE!</p>
-        </div>
 
-        <div class="text-wrap" id="bestvalue">
+            <!-- JavaScript for Play Button -->
+            <script>
+                document.getElementById('playButton').addEventListener('click', function () {
+                    var video = document.getElementById('test_video');
+                    video.play();
+                    this.style.display = 'none'; // Hide play button after clicking
+                });
+            </script>
 
-            <h2>STRUGGLING WITH REVIEWS?</h2>
 
-            <h3 class="text-center">How would you like <br>
-                to have much... <br>
-                much more of them, <br>
-                without even the possibility <br>
-                of a bad one?
-            </h3>
+            <div class="intro-text">
+                <p style="color: #ff9700; font-size: 42px; font-weight: 700;">FLAWLESS REPUTATION</p>
 
-            <p class="text-center">"Hacking the system" for you, <br>
-               <strong> we can make it happen!</strong></p>
+                <style>
+                    .review-section {
+                        display: flex;
+                        align-items: stretch;
+                        /* Both boxes will be equal height */
+                        justify-content: space-between;
+                        background: transparent;
+                        /* Outside background fully transparent */
+                        padding: 40px;
+                        border-radius: 10px;
+                        margin-top: 30px;
+                        gap: 40px;
+                        /* Space between the two boxes */
+                    }
 
-            <p class="text-center">
-                You're probably not collecting reviews <br>
-                <strong>according to your client's volume.</strong> <br>
-                And, you've probably received <br>
-                at least one bad review <br>
-                for no real reason...
-            </p>
+                    .review-box {
+                        width: 48%;
+                        padding: 25px;
+                        border-radius: 8px;
+                        background-color: #222;
+                        /* Background inside the border */
+                        border: 1px solid rgba(255, 255, 255, 0.2);
+                        /* Subtle border */
+                        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+                        /* Soft shadow */
+                    }
 
-            <p class="text-center">Why is this happening?</p>
+                    .review-title {
+                        color: white;
+                        font-size: 24px;
+                        font-weight: bold;
+                        margin-bottom: 15px;
+                    }
 
-            <p class="text-center">
-                Well, some people are just mean, <br>
-                posting bad comments <br>
-                <strong>even though you did a good job.</strong> <br>
-                But most of them don't really care <br>
-                to leave any review.
-            </p>
+                    .review-list {
+                        list-style-type: disc;
+                        /* Use bullet style */
+                        padding-left: 20px;
+                        /* Indent to display bullets properly */
+                        margin: 0;
+                    }
 
-            <p class="text-center">
-                Listen, <br>
-                we both know <strong>Google's reputation system</strong> <br>
-                has a huge impact on every business. <br>
-            </p>
+                    /* Spacing for list items in the left box */
+                    .left-box .review-list li {
+                        color: white;
+                        font-size: 18px;
+                        margin-bottom: 20px;
+                    }
 
-            <p class="text-center">
-                So, I'm not going to tell you a story <br>
-                about how I had a toothache <br>
-                and chose a dentist with the <strong>best reviews </strong><br>
-                in the neighborhood…
-            </p>
+                    /* Spacing for list items in the right box */
+                    .right-box .review-list li {
+                        color: white;
+                        font-size: 18px;
+                        margin-bottom: 30px;
+                    }
 
-            <p class="text-center">
-                Instead, I wanna share some <strong>statistical facts</strong> <br>
-                you might be seeing for the first time:
-            </p>
+                    /* Style for "flawless reputation" inside the text */
+                    .highlight {
+                        color: #ff9700;
+                        /* Same color as the title */
+                        font-weight: bold;
+                    }
+                </style>
 
-            <p class="text-center">
-                - 90% of people read reviews before a purchase <br>
-                - 88% of people trust online reviews <br>
-                <strong>as much</strong> <br>
-                as personal recommendations <br>
-                - 57% of customers will <strong>only</strong> choose a business with a rating of 4 stars or higher <br>
-                - 85% of consumers don't trust reviews <br>
-                older than 3 months <br>
-                (meaning, fresh reviews <strong>build credibility</strong>) <br>
-                - Businesses that respond to reviews <br>
-                are perceived as 1.7 times <strong>more trustworthy</strong> <br>
-                then those that don't <br>
-                - A single negative review <br>
-                can cost a business <strong>up to 22%</strong> of potential clients!
-            </p>
+                <div class="review-section">
+                    <!-- Left Box: REVIEW IMPACT -->
+                    <div class="review-box left-box">
+                        <p class="review-title">REVIEW IMPACT: FEW FACTS</p>
+                        <br> <br>
+                        <ul class="review-list">
+                            <li>22% of Potential Customers Are Lost Due to Negative Reviews</li>
+                            <li>90% of Buyers Check Reviews Before Purchasing</li>
+                            <li>57% of Customers Avoid Businesses Rated Below 4 Stars</li>
+                            <li>85% of Customers Trust Only Recent Reviews (Within 3 Months)</li>
+                            <li>Businesses That Respond to Reviews Are Perceived as 1.7× More Trustworthy</li>
+                            <li>Google Reviews Influence Up to 15.44% of SEO Rankings</li>
+                        </ul>
+                    </div>
 
-            <h3 class="text-center">There is a way to fix everything.</h3>
+                    <!-- Right Box: WHAT OUR SYSTEM ACHIEVES -->
+                    <div class="review-box right-box">
+                        <p class="review-title">WHAT OUR SYSTEM ACHIEVES</p>
+                        <br> <br>
+                        <ul class="review-list">
+                            <li>Blocks All Negative Feedback</li>
+                            <li>Collects Every Positive Review</li>
+                            <li>Automates Personalized Responses</li>
+                            <li>Maximizes Google SEO Impact</li>
+                            <li>Strengthens Brand Authority</li>
+                            <li>A steady flow of positive reviews <br> builds trust and maintains a <br>
+                                <span class="highlight">flawless reputation</span>, securing the company’s long-term
+                                growth.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
 
-            <p class="text-center">
-                Imagine a system <br>
-                that's <strong>consistently</strong> collecting reviews <br>
-                from your clients, <br>
-                and <strong>all of them </strong> are 4 and 5 stars! <br>
-                (You can even choose to have only 5 stars)
-            </p>
+                <br> <br> <br> <br>
+                <p>LET'S DO IT <span>TOGETHER</span> ON A <br></p>
 
-            <p class="text-center">Sounds unreal?</p>
-
-            <p class="text-center">
-                Well, it's possible, <br>
-                'cause we can <strong>automatically</strong> send invites <br>
-                to all of your clients <br>
-                and <strong>legally filter out</strong> anything less <br>
-                than a 5-star review.
-            </p>
-
-            <p class="text-center">So, how does it work?</p>
-            <hr> <br>
-
-            <p class="text-center">
-                For a consulting call <br>
-                check out my calendar <strong><a href="javascript:void(0)" onclick="book()" style="font-size: inherit; font-weight: inherit;">here <span style="text-decoration: underline; font-size: inherit; font-weight: inherit;">(link)</span></a></strong>
-            </p>
-            <hr> <br>
-
-            <p class="text-center">I won't explain every detail, <br>
-                but in a nutshell, it goes like this:
-            </p>
-
-            <p class="text-center">Each client, <br>
-                upon leaving your establishment, <br>
-                receives a polite <strong>"thank you" message</strong> <br>
-                with questions like: <br>
-                "Are you satisfied with our service?" <br>
-                and <br>
-                "From 1 to 5, <strong>how likely would you recommend us</strong> <br>
-                to your friends?"
-            </p>
-
-            <p class="text-center">
-                <strong>If</strong> the reply is positive <br>
-                (containing 4 or 5), <br>
-                the client automatically receives <br>
-                an <strong>invite to rate</strong> you on Google. <br>
-                If the reply is negative <br>
-                (containing 1, 2, or 3), <br>
-                the invitation won't even be sent. <br>
-                Instead, <br>
-                we apologize for a bad experience <br>
-                and ask questions like: <br>
-                "Why is that?" <br>
-                "Do you have any advice for us?" <br>
-                or <br>
-                "How can we improve?"
-            </p>
-
-            <p class="text-center">
-                Of course, these are just examples. <br>
-                <strong>We wouldn't write any message</strong> <br>
-                before getting to know <br>
-                your style of writing.
-            </p>
-
-            <p class="text-center">
-                So yes, <br>
-                we do offer a <strong>custom and personalized</strong> approach <br>
-                to everyone we work with.
-            </p>
-
-            <p class="text-center">
-                Not bad, right?
-            </p>
-
-            <hr><br>
-            <h3 class="text-center">
-                <a href="javascript:void(0)" onclick="book()" style="font-size: 22px; font-weight: 700;">
-                    <i class="fas fa-calendar-check" style="margin-right: 8px;"></i> BOOK A CALL
+                <a href="javascript:void(0)" onclick="book()">
+                    <i class="fas fa-calendar-check"></i> GAME CHANGING SESSION
                 </a>
-            </h3>
-            <hr> <br>
 
-            <h3 class="text-center"><br> But that's not all!</h3>
+                <!-- Add confirmation modal -->
+                <div id="confirmationModal" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2>Warning</h2>
+                            <span class="close-button">&times;</span>
+                        </div>
+                        <div class="modal-body">
+                            <p>Please do not schedule this consulting call unless you are confident that you can:</p>
+                            <ul class="mb-32">
+                                <li>Stay fully focused during the session to absorb a significant amount of new,
+                                    actionable information.</li>
+                                <li>Adjust your mindset to align with modern advancements and leverage the latest tools
+                                    for progress.</li>
+                                <li>Diligently implement the advice you'll receive until the results become undeniably
+                                    clear.
+                                </li>
+                            </ul>
 
-            <p class="text-center">
-                We could also <br>
-                <strong>train and install another AI agent</strong> <br>
-                to respond to comments on your behalf, <br>
-                naturally and professionally, <br>
-                <strong>reflecting the culture of your business. </strong> <br>
-                Both AI agents can speak your slang, <br>
-                multiple languages, <br>
-                and even <br>
-                use each person's name in responses, <br>
-                so there's not even a hint <br>
-                of automation.
-            </p>
+                            <div class="text-center">
+                                <stripe-buy-button buy-button-id="buy_btn_1QhtVPKp4OMo88KHzOuxfKHN"
+                                    publishable-key="pk_live_51PtFV3Kp4OMo88KHGpbtKrO6arKlMC225Qs9bLgh5f4o2m97wWTAwMYRwhefYW2FNZwpBErV4bbNRx0iGXJcrHsJ00k6L7dXXF">
+                                </stripe-buy-button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p>START 2025 WITH AN UNFAIR ADVANTAGE!</p>
+            </div>
 
-            <p class="text-center">
-                With this live <strong> (24/7) agents </strong><br>
-                you can be 100% sure <br>
-                that reviews and comments <br>
-                are <strong>completely handled.</strong>
-            </p>
+            <div class="text-wrap" id="bestvalue">
 
-            <p class="text-center">
-                Now, <br>
-                what if someone just walks in <br>
-                through your door <strong>without a booking</strong> <br>
-                and a way to contact them? <br>
-                Well, <br>
-                as a bonus, <br>
-                we can provide a <strong>QR code </strong> <br>
-                that will take happy clients <br>
-                directly to your Google page to leave a review. <br>
-                You can put it on your reception desk <br>
-                or print it on your invoices. <br>
-                This is a perfect, natural way <br>
-                to get reviews from them <br>
-                and to stay in contact!
-            </p>
-            
-            <hr><br>
-            <h3 class="text-center">
-                <a href="javascript:void(0)" onclick="book()" style="font-size: 22px; font-weight: 700;">
-                    <i class="fas fa-calendar-check" style="margin-right: 8px;"></i> BOOK A CALL
-                </a>
-            </h3>
-            <hr> <br>
+                <h2>STRUGGLING WITH REVIEWS?</h2>
 
-            <h3 class="text-center"> <br> Sounds good?</h3>
+                <h3 class="text-center">How would you like <br>
+                    to have much... <br>
+                    much more of them, <br>
+                    without even the possibility <br>
+                    of a bad one?
+                </h3>
 
-            <p class="text-center">
-                Getting more and more reviews, <br>
-                all 4s and 5s? <br>
-                ...responding to clients on autopilot?
-            </p>
+                <p class="text-center">"Hacking the system" for you, <br>
+                    <strong> we can make it happen!</strong>
+                </p>
 
-            <h3 class="text-center">Well, it gets even better!</h3>
+                <p class="text-center">
+                    You're probably not collecting reviews <br>
+                    <strong>according to your client's volume.</strong> <br>
+                    And, you've probably received <br>
+                    at least one bad review <br>
+                    for no real reason...
+                </p>
 
-            <p class="text-center">Usually, <br>
-                this kind of service <br>
-                (chatbots and other automation) <br>
-                has a start-up fee <br>
-                of <strong>at least 2-3 k,</strong> <br>
-                with a monthly retainer <br>
-                (minimum of $500).
-            </p>
+                <p class="text-center">Why is this happening?</p>
 
-            <p class="text-center">
-                However, we decided <br>
-                not to charge the start-up fee <br>
-                saving you a couple of thousands right away!
-            </p>
+                <p class="text-center">
+                    Well, some people are just mean, <br>
+                    posting bad comments <br>
+                    <strong>even though you did a good job.</strong> <br>
+                    But most of them don't really care <br>
+                    to leave any review.
+                </p>
 
-            <h3 class="text-center">The only thing you pay</h3>
+                <p class="text-center">
+                    Listen, <br>
+                    we both know <strong>Google's reputation system</strong> <br>
+                    has a huge impact on every business. <br>
+                </p>
 
-            <p class="text-center">is a $500 monthly retainer, <br>
-                which is there anyway <br>
-                and already <strong>as low as possible.</strong>
-            </p>
+                <p class="text-center">
+                    So, I'm not going to tell you a story <br>
+                    about how I had a toothache <br>
+                    and chose a dentist with the <strong>best reviews </strong><br>
+                    in the neighborhood…
+                </p>
 
-            <p class="text-center">In theory, you are being charged for the call. <br>
-                Why? <br>
-                Well, it is a consulting service, <br>
-                and this advice alone <br>
-                (if put into action) <br>
-                profoundly changes people's businesses <br>
-                and lives on a daily basis. <br>
-                But if you decide <br>
-                to take full advantage of this deal, <br>
-                we'll treat the cost of the call <br>
-                as a down payment <br>
-                for our services. <br>
-                You see, <br>
-                the offer is designed this way <br>
-                to separate indecisive persons <br>
-                from serious entrepreneurs.
-            </p>
+                <p class="text-center">
+                    Instead, I wanna share some <strong>statistical facts</strong> <br>
+                    you might be seeing for the first time:
+                </p>
+
+                <p class="text-center">
+                    - 90% of people read reviews before a purchase <br>
+                    - 88% of people trust online reviews <br>
+                    <strong>as much</strong> <br>
+                    as personal recommendations <br>
+                    - 57% of customers will <strong>only</strong> choose a business with a rating of 4 stars or higher
+                    <br>
+                    - 85% of consumers don't trust reviews <br>
+                    older than 3 months <br>
+                    (meaning, fresh reviews <strong>build credibility</strong>) <br>
+                    - Businesses that respond to reviews <br>
+                    are perceived as 1.7 times <strong>more trustworthy</strong> <br>
+                    then those that don't <br>
+                    - A single negative review <br>
+                    can cost a business <strong>up to 22%</strong> of potential clients!
+                </p>
+
+                <h3 class="text-center">There is a way to fix everything.</h3>
+
+                <p class="text-center">
+                    Imagine a system <br>
+                    that's <strong>consistently</strong> collecting reviews <br>
+                    from your clients, <br>
+                    and <strong>all of them </strong> are 4 and 5 stars! <br>
+                    (You can even choose to have only 5 stars)
+                </p>
+
+                <p class="text-center">Sounds unreal?</p>
+
+                <p class="text-center">
+                    Well, it's possible, <br>
+                    'cause we can <strong>automatically</strong> send invites <br>
+                    to all of your clients <br>
+                    and <strong>legally filter out</strong> anything less <br>
+                    than a 5-star review.
+                </p>
+
+                <p class="text-center">So, how does it work?</p>
+                <hr> <br>
+
+                <p class="text-center">
+                    For a consulting call <br>
+                    check out my calendar <strong><a href="javascript:void(0)" onclick="book()"
+                            style="font-size: inherit; font-weight: inherit;">here <span
+                                style="text-decoration: underline; font-size: inherit; font-weight: inherit;">(link)</span></a></strong>
+                </p>
+                <hr> <br>
+
+                <p class="text-center">I won't explain every detail, <br>
+                    but in a nutshell, it goes like this:
+                </p>
+
+                <p class="text-center">Each client, <br>
+                    upon leaving your establishment, <br>
+                    receives a polite <strong>"thank you" message</strong> <br>
+                    with questions like: <br>
+                    "Are you satisfied with our service?" <br>
+                    and <br>
+                    "From 1 to 5, <strong>how likely would you recommend us</strong> <br>
+                    to your friends?"
+                </p>
+
+                <p class="text-center">
+                    <strong>If</strong> the reply is positive <br>
+                    (containing 4 or 5), <br>
+                    the client automatically receives <br>
+                    an <strong>invite to rate</strong> you on Google. <br>
+                    If the reply is negative <br>
+                    (containing 1, 2, or 3), <br>
+                    the invitation won't even be sent. <br>
+                    Instead, <br>
+                    we apologize for a bad experience <br>
+                    and ask questions like: <br>
+                    "Why is that?" <br>
+                    "Do you have any advice for us?" <br>
+                    or <br>
+                    "How can we improve?"
+                </p>
+
+                <p class="text-center">
+                    Of course, these are just examples. <br>
+                    <strong>We wouldn't write any message</strong> <br>
+                    before getting to know <br>
+                    your style of writing.
+                </p>
+
+                <p class="text-center">
+                    So yes, <br>
+                    we do offer a <strong>custom and personalized</strong> approach <br>
+                    to everyone we work with.
+                </p>
+
+                <p class="text-center">
+                    Not bad, right?
+                </p>
+
+                <hr><br>
+                <h3 class="text-center">
+                    <a href="javascript:void(0)" onclick="book()" style="font-size: 22px; font-weight: 700;">
+                        <i class="fas fa-calendar-check" style="margin-right: 8px;"></i> BOOK A CALL
+                    </a>
+                </h3>
+                <hr> <br>
+
+                <h3 class="text-center"><br> But that's not all!</h3>
+
+                <p class="text-center">
+                    We could also <br>
+                    <strong>train and install another AI agent</strong> <br>
+                    to respond to comments on your behalf, <br>
+                    naturally and professionally, <br>
+                    <strong>reflecting the culture of your business. </strong> <br>
+                    Both AI agents can speak your slang, <br>
+                    multiple languages, <br>
+                    and even <br>
+                    use each person's name in responses, <br>
+                    so there's not even a hint <br>
+                    of automation.
+                </p>
+
+                <p class="text-center">
+                    With this live <strong> (24/7) agents </strong><br>
+                    you can be 100% sure <br>
+                    that reviews and comments <br>
+                    are <strong>completely handled.</strong>
+                </p>
+
+                <p class="text-center">
+                    Now, <br>
+                    what if someone just walks in <br>
+                    through your door <strong>without a booking</strong> <br>
+                    and a way to contact them? <br>
+                    Well, <br>
+                    as a bonus, <br>
+                    we can provide a <strong>QR code </strong> <br>
+                    that will take happy clients <br>
+                    directly to your Google page to leave a review. <br>
+                    You can put it on your reception desk <br>
+                    or print it on your invoices. <br>
+                    This is a perfect, natural way <br>
+                    to get reviews from them <br>
+                    and to stay in contact!
+                </p>
+
+                <hr><br>
+                <h3 class="text-center">
+                    <a href="javascript:void(0)" onclick="book()" style="font-size: 22px; font-weight: 700;">
+                        <i class="fas fa-calendar-check" style="margin-right: 8px;"></i> BOOK A CALL
+                    </a>
+                </h3>
+                <hr> <br>
+
+                <h3 class="text-center"> <br> Sounds good?</h3>
+
+                <p class="text-center">
+                    Getting more and more reviews, <br>
+                    all 4s and 5s? <br>
+                    ...responding to clients on autopilot?
+                </p>
+
+                <h3 class="text-center">Well, it gets even better!</h3>
+
+                <p class="text-center">Usually, <br>
+                    this kind of service <br>
+                    (chatbots and other automation) <br>
+                    has a start-up fee <br>
+                    of <strong>at least 2-3 k,</strong> <br>
+                    with a monthly retainer <br>
+                    (minimum of $500).
+                </p>
+
+                <p class="text-center">
+                    However, we decided <br>
+                    not to charge the start-up fee <br>
+                    saving you a couple of thousands right away!
+                </p>
+
+                <h3 class="text-center">The only thing you pay</h3>
+
+                <p class="text-center">is a $500 monthly retainer, <br>
+                    which is there anyway <br>
+                    and already <strong>as low as possible.</strong>
+                </p>
+
+                <p class="text-center">In theory, you are being charged for the call. <br>
+                    Why? <br>
+                    Well, it is a consulting service, <br>
+                    and this advice alone <br>
+                    (if put into action) <br>
+                    profoundly changes people's businesses <br>
+                    and lives on a daily basis. <br>
+                    But if you decide <br>
+                    to take full advantage of this deal, <br>
+                    we'll treat the cost of the call <br>
+                    as a down payment <br>
+                    for our services. <br>
+                    You see, <br>
+                    the offer is designed this way <br>
+                    to separate indecisive persons <br>
+                    from serious entrepreneurs.
+                </p>
 
 
-            <p class="text-center">Sounds fair?</p>
+                <p class="text-center">Sounds fair?</p>
 
-            <hr><br>
-            <h3 class="text-center">
-                <a href="javascript:void(0)" onclick="book()" style="font-size: 22px; font-weight: 700;">
-                    <i class="fas fa-calendar-check" style="margin-right: 8px;"></i> BOOK A CALL
-                </a>
-            </h3>
-            <hr> <br>
+                <hr><br>
+                <h3 class="text-center">
+                    <a href="javascript:void(0)" onclick="book()" style="font-size: 22px; font-weight: 700;">
+                        <i class="fas fa-calendar-check" style="margin-right: 8px;"></i> BOOK A CALL
+                    </a>
+                </h3>
+                <hr> <br>
 
-            <p class="text-center">This strategy <br>
-                is rapidly growing in popularity. <br>
-                So <strong>be ahead</strong> of your competitors <br>
-                and <strong>start today!</strong>
-            </p>
+                <p class="text-center">This strategy <br>
+                    is rapidly growing in popularity. <br>
+                    So <strong>be ahead</strong> of your competitors <br>
+                    and <strong>start today!</strong>
+                </p>
 
-            <p class="text-center">...and put your business into a sixed geir!</p>
+                <p class="text-center">...and put your business into a sixed geir!</p>
 
-            <p class="text-center">I would be delighted to speak with you <br>
-                to <strong>discuss this further.</strong> <br>
-                And possibly, as we go on, <br>
-                explore even other AI solutions <br>
-                for your business.
-            </p>
+                <p class="text-center">I would be delighted to speak with you <br>
+                    to <strong>discuss this further.</strong> <br>
+                    And possibly, as we go on, <br>
+                    explore even other AI solutions <br>
+                    for your business.
+                </p>
 
-            <p class="text-center">...and start building your own <br>
-                steller reputacion!
-            </p>
+                <p class="text-center">...and start building your own <br>
+                    steller reputacion!
+                </p>
 
-            <p class="text-center">We cannot guarantee that <br>
-                this offer will be available <br>
-                for much longer! <br>
-                Because we expect a lot of business <br>
-                and a full schedule <br>
-                with this approach, <br>
-                the prices might be <br>
-                significantly higher, <br>
-                very soon.
-            </p>
-            <hr><br>
+                <p class="text-center">We cannot guarantee that <br>
+                    this offer will be available <br>
+                    for much longer! <br>
+                    Because we expect a lot of business <br>
+                    and a full schedule <br>
+                    with this approach, <br>
+                    the prices might be <br>
+                    significantly higher, <br>
+                    very soon.
+                </p>
+                <hr><br>
 
-            <p class="text-center">Alternatively, <br>
-                you might find it <strong>more convenient</strong> <br>
-                to start using this strategy <br>
-                without a call.
-            </p>
+                <p class="text-center">Alternatively, <br>
+                    you might find it <strong>more convenient</strong> <br>
+                    to start using this strategy <br>
+                    without a call.
+                </p>
 
-            <p class="text-center">Why would you avoid it?</p>
+                <p class="text-center">Why would you avoid it?</p>
 
-            <p class="text-center">Well, first of all, <br>
-                <strong>you might be extremely busy</strong> <br>
-                or juggling too many things right now <br>
-                and you just <strong>can't tell for sure</strong> <br>
-                what time is good for you <br>
-                to jump on a call.
-            </p>
+                <p class="text-center">Well, first of all, <br>
+                    <strong>you might be extremely busy</strong> <br>
+                    or juggling too many things right now <br>
+                    and you just <strong>can't tell for sure</strong> <br>
+                    what time is good for you <br>
+                    to jump on a call.
+                </p>
 
-            <h3 class="text-center">I completely understand if this is the case.</h3>
+                <h3 class="text-center">I completely understand if this is the case.</h3>
 
-            <p class="text-center">That is why <br>
-                I'm even gonna give you a <br>
-                <strong>50% discount</strong> <br>
-                for the first month <br>
-                if you enroll without a call.
-            </p>
+                <p class="text-center">That is why <br>
+                    I'm even gonna give you a <br>
+                    <strong>50% discount</strong> <br>
+                    for the first month <br>
+                    if you enroll without a call.
+                </p>
 
-            <p class="text-center">You would need to chat, <br>
-                just a little bit, <br>
-                with an AI agent of our own, <br>
-                but only to provide us <br>
-                with the necessary information, <br>
-                and that's all...
-            </p>
+                <p class="text-center">You would need to chat, <br>
+                    just a little bit, <br>
+                    with an AI agent of our own, <br>
+                    but only to provide us <br>
+                    with the necessary information, <br>
+                    and that's all...
+                </p>
 
-            <h3 class="text-center">There is no need for a call.</h3>
+                <h3 class="text-center">There is no need for a call.</h3>
 
-            <p class="text-center">
-                Here is a PDF file <br>
-                of our exact offer <strong><a href="javascript:void(0)" onclick="book()" style="font-size: inherit; font-weight: inherit;">here <span style="text-decoration: underline; font-size: inherit; font-weight: inherit;">(link)</span></a></strong>
-            </p>
-            <hr> <br>
+                <p class="text-center">
+                    Here is a PDF file <br>
+                    of our exact offer <strong><a href="javascript:void(0)" onclick="book()"
+                            style="font-size: inherit; font-weight: inherit;">here <span
+                                style="text-decoration: underline; font-size: inherit; font-weight: inherit;">(link)</span></a></strong>
+                </p>
+                <hr> <br>
 
-            <!-- <p class="text-center">Here is a PDF file <br> -->
+                <!-- <p class="text-center">Here is a PDF file <br> -->
                 <!-- <strong>of our exact offer.</strong> <br>
                 <a>(link)</a>
             </p> -->
 
-            <p class="text-center">If you see it fits,
-                you can take an option
-                to give us a green light
-                just through a text.
-            </p>
+                <p class="text-center">If you see it fits,
+                    you can take an option
+                    to give us a green light
+                    just through a text.
+                </p>
 
-            <p class="text-center">We would <strong>start implementing</strong> <br>
-                this solution for you right away.
-            </p>
+                <p class="text-center">We would <strong>start implementing</strong> <br>
+                    this solution for you right away.
+                </p>
 
-            <p class="text-center">In the meantime, <br>
-                you would get access <br>
-                to my <strong>personal WhatsApp app.</strong> <br>
-                Now, <br>
-                "personal" means that <br>
-                it's not connected to any chatbot <br>
-                cause when someone becomes a client, <br>
-                an AI interaction completely stops. <br>
-                So, let's start building <br>
-                that stellar reputation! <br>
-            </p>
-            
-            <h3 class="text-center">READ THE OFFER <br>
-                <a href="javascript:void(0)" onclick="book()" style="font-size: 22px; font-weight: 700;">
-                    <i class="fas fa-link" style="margin-right: 8px;"></i> link
-                </a>
-            </h3>                     
-        </div>
+                <p class="text-center">In the meantime, <br>
+                    you would get access <br>
+                    to my <strong>personal WhatsApp app.</strong> <br>
+                    Now, <br>
+                    "personal" means that <br>
+                    it's not connected to any chatbot <br>
+                    cause when someone becomes a client, <br>
+                    an AI interaction completely stops. <br>
+                    So, let's start building <br>
+                    that stellar reputation! <br>
+                </p>
 
-        <div class="text-wrap" id="otherservices">
+                <h3 class="text-center">READ THE OFFER <br>
+                    <a href="javascript:void(0)" onclick="book()" style="font-size: 22px; font-weight: 700;">
+                        <i class="fas fa-link" style="margin-right: 8px;"></i> link
+                    </a>
+                </h3>
+            </div>
 
-            <h2>SERVICES</h2>
+            <div class="text-wrap" id="otherservices">
 
-            <h3 style="font-size: 28px; font-weight: 800; color: #ff9700">1. Consulting – AI Strategy</h3>
+                <h2>SERVICES</h2>
+
+                <h3 style="font-size: 28px; font-weight: 800; color: #ff9700">1. Consulting – AI Strategy</h3>
 
 
-            <p>
-                Don't navigate the sea of AI possibilities alone. <br>
-                We can provide you with clarity <br>
-                and a step-by-step strategy <br>
-                to integrate intelligent solutions <br>
-                into your business. <br>
-                In a 45-minute session, <br>
-                we'll identify where AI can deliver the greatest value <br>
-                and create a practical plan <br>
-                for automation and optimization. <br>
-                Let's work together to make your business <br>
-                more efficient, smarter, and more profitable. <br>
-            </p>
+                <p>
+                    Don't navigate the sea of AI possibilities alone. <br>
+                    We can provide you with clarity <br>
+                    and a step-by-step strategy <br>
+                    to integrate intelligent solutions <br>
+                    into your business. <br>
+                    In a 45-minute session, <br>
+                    we'll identify where AI can deliver the greatest value <br>
+                    and create a practical plan <br>
+                    for automation and optimization. <br>
+                    Let's work together to make your business <br>
+                    more efficient, smarter, and more profitable. <br>
+                </p>
 
-            <hr><br>
-            <h3 class="text-center">
-                <a href="javascript:void(0)" onclick="book()" style="font-size: 22px; font-weight: 700;">
-                    <i class="fas fa-calendar-check" style="margin-right: 8px;"></i> BOOK A CALL
-                </a>
-            </h3>
-            <hr> <br>
-
-            <h3 style="font-size: 28px; font-weight: 800; color: #ff9700">2. Offer Creation (Bonus – After a Call)</h3>
-
-            <h3><br>
-                Irresistible Offers Your Clients Can't Refuse
-            </h3>
-
-            <p>We can create a unique and incomparable offer <br>
-                that highlights your business's value. <br>
-                Your clients will feel like they're getting incredible benefits <br>
-                and will gladly pay 3, 5, or even 10 times more. <br>
-                When your offer makes them say: "Thank you!" <br>
-                after they purchase, you know you're on the right track. <br>
-                This comes without charge. <br>
-                After a call, you will receive an email with up to 3 versions <br>
-                of an outstanding offer <br>
-                that will seem like a bargain to your clients. <br>
-            </p>
-
-            <hr><br>
-            <h3 class="text-center">
-                <a href="javascript:void(0)" onclick="book()" style="font-size: 22px; font-weight: 700;">
-                    <i class="fas fa-calendar-check" style="margin-right: 8px;"></i> BOOK A CALL
-                </a>
-            </h3>
-            <hr> <br>
-
-            <h3 style="font-size: 28px; font-weight: 800; color: #ff9700">3. Copywriting – Words That Sell and Inspire Action</h3>
-
-            <p>
-                Sometimes, all you need are the right words to spark action. <br>
-                Let's write copy that doesn't just sound good <br>
-                but actually sells! <br>
-                Whether you need ads, emails, website copy, <br>
-                or social media posts, we write content that: <br>
-            </p>
-
-            <ul>
-                <li>Inspires action.</li>
-                <li>Drives change.</li>
-                <li>Boosts conversions.</li>
-            </ul>
-
-            <p>Don't let your message just be read — let it be acted upon. <br>
                 <hr><br>
+                <h3 class="text-center">
+                    <a href="javascript:void(0)" onclick="book()" style="font-size: 22px; font-weight: 700;">
+                        <i class="fas fa-calendar-check" style="margin-right: 8px;"></i> BOOK A CALL
+                    </a>
+                </h3>
+                <hr> <br>
+
+                <h3 style="font-size: 28px; font-weight: 800; color: #ff9700">2. Offer Creation (Bonus – After a Call)
+                </h3>
+
+                <h3><br>
+                    Irresistible Offers Your Clients Can't Refuse
+                </h3>
+
+                <p>We can create a unique and incomparable offer <br>
+                    that highlights your business's value. <br>
+                    Your clients will feel like they're getting incredible benefits <br>
+                    and will gladly pay 3, 5, or even 10 times more. <br>
+                    When your offer makes them say: "Thank you!" <br>
+                    after they purchase, you know you're on the right track. <br>
+                    This comes without charge. <br>
+                    After a call, you will receive an email with up to 3 versions <br>
+                    of an outstanding offer <br>
+                    that will seem like a bargain to your clients. <br>
+                </p>
+
+                <hr><br>
+                <h3 class="text-center">
+                    <a href="javascript:void(0)" onclick="book()" style="font-size: 22px; font-weight: 700;">
+                        <i class="fas fa-calendar-check" style="margin-right: 8px;"></i> BOOK A CALL
+                    </a>
+                </h3>
+                <hr> <br>
+
+                <h3 style="font-size: 28px; font-weight: 800; color: #ff9700">3. Copywriting – Words That Sell and
+                    Inspire Action</h3>
+
+                <p>
+                    Sometimes, all you need are the right words to spark action. <br>
+                    Let's write copy that doesn't just sound good <br>
+                    but actually sells! <br>
+                    Whether you need ads, emails, website copy, <br>
+                    or social media posts, we write content that: <br>
+                </p>
+
+                <ul>
+                    <li>Inspires action.</li>
+                    <li>Drives change.</li>
+                    <li>Boosts conversions.</li>
+                </ul>
+
+                <p>Don't let your message just be read — let it be acted upon. <br>
+                    <hr><br>
                 <h3 class="text-center">
                     <a href="javascript:void(0)" onclick="book()" style="font-size: 22px; font-weight: 700;">
                         <i class="fas fa-calendar-check" style="margin-right: 8px;"></i> Get High-Impact Copy Now
                     </a>
                 </h3>
                 <hr> <br>
-            </p>
+                </p>
 
-            <h3 style="font-size: 28px; font-weight: 800; color: #ff9700">4. Email Blast – Instantly Reach Thousands of Clients</h3>
+                <h3 style="font-size: 28px; font-weight: 800; color: #ff9700">4. Email Blast – Instantly Reach Thousands
+                    of Clients</h3>
 
-            <p>
-                Imagine sending 1,000 to 5,000 emails daily, <br>
-                instantly and flawlessly. <br>
-                We can reach thousands of your potential clients with precise, personalized messages that drive sales. <br>
-                With automated follow-ups and smart segmentation, <br>
-                your campaign will not only be seen — it will deliver results. <br>
-                (This service does not necessarily include copywriting.) <br>
-                
-                <hr><br>
+                <p>
+                    Imagine sending 1,000 to 5,000 emails daily, <br>
+                    instantly and flawlessly. <br>
+                    We can reach thousands of your potential clients with precise, personalized messages that drive
+                    sales. <br>
+                    With automated follow-ups and smart segmentation, <br>
+                    your campaign will not only be seen — it will deliver results. <br>
+                    (This service does not necessarily include copywriting.) <br>
+
+                    <hr><br>
                 <h3 class="text-center">
                     <a href="javascript:void(0)" onclick="book()" style="font-size: 22px; font-weight: 700;">
                         <i class="fas fa-calendar-check" style="margin-right: 8px;"></i> Launch Your Email Blast Now
                     </a>
                 </h3>
                 <hr> <br>
-            </p>
+                </p>
 
-            <h3 style="font-size: 28px; font-weight: 800; color: #ff9700">5. ChatForce 24/7 – AI Support That Never Sleeps</h3>
+                <h3 style="font-size: 28px; font-weight: 800; color: #ff9700">5. ChatForce 24/7 – AI Support That Never
+                    Sleeps</h3>
 
-            <p>Imagine a team of assistants working for you <strong>24/7,</strong>
-                never resting, and communicating with your clients perfectly.
-                We can provide AI chatbots and voicebots that:
-            </p>
+                <p>Imagine a team of assistants working for you <strong>24/7,</strong>
+                    never resting, and communicating with your clients perfectly.
+                    We can provide AI chatbots and voicebots that:
+                </p>
 
-            <ul>
-                <li>Respond to inquiries in real-time.</li>
-                <li>Speak multiple languages.</li>
-                <li>Schedule appointments and capture leads effortlessly.</li>
-            </ul>
-            <br>
-            <p>Give your clients top-tier support anytime, anywhere. <br><br>
-                <hr><br>
+                <ul>
+                    <li>Respond to inquiries in real-time.</li>
+                    <li>Speak multiple languages.</li>
+                    <li>Schedule appointments and capture leads effortlessly.</li>
+                </ul>
+                <br>
+                <p>Give your clients top-tier support anytime, anywhere. <br><br>
+                    <hr><br>
                 <h3 class="text-center">
                     <a href="javascript:void(0)" onclick="book()" style="font-size: 22px; font-weight: 700;">
                         <i class="fas fa-calendar-check" style="margin-right: 8px;"></i> Deploy ChatForce 24/7 Now
                     </a>
                 </h3>
                 <hr> <br>
-            </p>
+                </p>
+
+            </div>
+
+            <div class="text-wrap" id="aboutus">
+                <h2>ABOUT US</h2>
+
+                <p>Welcome to Natter LLC, where expertise meets innovation. <br><br>
+                    While we may be a relatively new company <strong>in this specific system,</strong> our roots in the
+                    digital services industry run deep. We've spent years perfecting the art of <strong>delivering
+                        value</strong> through automation, strategy, and cutting-edge technology. This foundation
+                    empowers us to bring unmatched insight and dedication to every project we take on.
+                </p>
+                <hr><br>
+                <h3>What Sets Us Apart?</h3>
+                <p>We understand the stakes are high — and we're ready
+                    to meet them with <strong>unwavering commitment.</strong>
+                </p>
+                <p>Our mission is to:</p>
+                <ul>
+                    <li>Deliver maximum value for our clients.</li>
+                    <li>Work tirelessly to exceed expectations.</li>
+                    <li>Provide premium-quality services while keeping costs lean and efficient.</li>
+                </ul>
+                <p>We believe in building long-term relationships based on trust, results, and shared success.</p>
+                <hr><br>
+                <h3>The Mind Behind It All</h3>
+                <p>
+                    Our leadership brings a relentless <strong>business-focused mindset</strong> that operates 24/7.
+                    With a proven track record of helping others increase profitability, we understand the intricacies
+                    of running a successful business better than most. By staying updated with the latest trends and
+                    <strong>applying practical solutions immediately,</strong> we create strategies that aren't just
+                    theoretical — they work in the real world.
+                </p>
+                <hr>
+                <p>At <strong> Natter LLC,</strong> we're not just service providers; we're your partners in growth.
+                    Whether it's through consulting, automation, or strategy, our goal is to help you unlock your
+                    business's full potential.
+                    Let's build something extraordinary together.
+                </p>
+            </div>
+
+
+            <div class="text-wrap" id="wegetasked">
+
+                <h2>WE GET ASKED</h2>
+
+                <p>Here are answers to the most common questions we receive.
+                    If you're wondering about something not covered here,
+                    feel free to chat with our chatbot down below!
+                </p>
+                <hr><br>
+                <h3>1. What makes your company different from others?</h3>
+
+                <p><strong>We do this 'cause we love it, not because we have to.</strong></p>
+
+                <p>That's why we approach every project with expertise and passion. <br>
+                    While we're newer to this particular system, our team has years of experience in digital services
+                    and a track record of delivering results. <strong>We work harder than anyone to ensure you're not
+                        just satisfied but genuinely impressed.</strong>
+                </p>
+                <hr><br>
+
+                <h3>2. When can I expect to see results?</h3>
+
+                <p>That depends on the service. For example:</p>
+
+                <ul>
+                    <li>Our AI-driven automation systems often show results within a week of implementation.</li>
+                    <li>Email campaigns can generate responses within hours.</li>
+                    <li>Consulting offers actionable insights right after our session.</li>
+                </ul>
+
+                <hr><br>
+
+                <h3>3. Why should I trust your consulting services?</h3>
+
+                <p>Because we live and breathe business strategy. <br>
+                    Our founder has spent a lifetime studying what makes businesses thrive and has helped countless
+                    clients earn more. <br>
+                    With the AI revolution, it has only became much easier and faster! <br>
+                    You'll get actionable insights, not generic advice.
+                </p>
+
+                <hr><br>
+
+                <h3>4. How do your prices compare to others?</h3>
+
+                <p>We focus on delivering <strong>maximum value at a fair price.</strong><br>
+                    Chek out our offer "Best Value". <br>
+                    Instead of inflating costs, we ensure you only pay for the apsolutely neccesery stuf. Since we're
+                    building our reputation, we go the extra mile to prove our worth and deliver more than you'd expect
+                    for the cost.
+                </p>
+                <hr><br>
+
+                <h3>5. Do you offer ongoing support?</h3>
+                <p>Yes. Our relationship doesn't end after delivery. We ensure everything runs smoothly and remains
+                    up-to-date. If you ever need adjustments or have questions, we're just a call or message away.</p>
+                <hr><br>
+
+                <h3>6. Can your services fit my industry?</h3>
+                <p>We don't limit ourselves to one industry. Whether you run a spa, manage an e-commerce store, or lead
+                    a corporate team, we'll apply proven methods that align with your goals. If your business can
+                    benefit from better systems and smarter tools, we're the right fit.</p>
+
+                <hr><br>
+                <h3>7. Can you help with specific business challenges?</h3>
+                <p>Absolutely. If there's something holding your business back — whether it's inefficiency, customer
+                    retention, or revenue growth — we'll focus on finding the right solution to fix it. We don't just
+                    talk ideas; we focus on getting results.</p>
+
+                <h3>8. How do your email services work?</h3>
+                <p>We can send <strong>1,000 to 5,000 emails daily,</strong> personalized for your audience. These
+                    campaigns are designed to grab attention, spark interest, and drive action. With precise targeting
+                    and follow-ups, you'll see real engagement real quick.</p>
+                <hr><br>
+                <h3>9. How can AI chatbots and voicebots improve my business?</h3>
+                <p>Imagine having a team that works <strong>24/7,</strong> speaks multiple languages, and handles
+                    hundreds of inquiries at once — that's what AI bots can do. They save time, cut costs, and ensure
+                    your customers get immediate answers, no matter the time or place.</p>
+                <hr><br>
+                <h3>10. How do I know if your services are the right fit?</h3>
+
+                <p>The easiest way to find out is to <strong>book a session with us.</strong> We'll talk about your
+                    business, identify opportunities, and suggest immediate improvements. You'll leave with clarity and
+                    a concrete plan to move forward.</p>
+            </div>
 
         </div>
-
-        <div class="text-wrap" id="aboutus"> 
-            <h2>ABOUT US</h2>
-        
-            <p>Welcome to Natter LLC, where expertise meets innovation. <br><br>
-                While we may be a relatively new company <strong>in this specific system,</strong> our roots in the digital services industry run deep. We've spent years perfecting the art of <strong>delivering value</strong> through automation, strategy, and cutting-edge technology. This foundation empowers us to bring unmatched insight and dedication to every project we take on.
-            </p>
-            <hr><br>
-            <h3>What Sets Us Apart?</h3>
-            <p>We understand the stakes are high — and we're ready
-                to meet them with <strong>unwavering commitment.</strong>
-            </p>
-            <p>Our mission is to:</p>
-            <ul>
-                <li>Deliver maximum value for our clients.</li>
-                <li>Work tirelessly to exceed expectations.</li>
-                <li>Provide premium-quality services while keeping costs lean and efficient.</li>
-            </ul>
-            <p>We believe in building long-term relationships based on trust, results, and shared success.</p>
-            <hr><br>
-            <h3>The Mind Behind It All</h3>
-            <p>
-                Our leadership brings a relentless <strong>business-focused mindset</strong> that operates 24/7. With a proven track record of helping others increase profitability, we understand the intricacies of running a successful business better than most. By staying updated with the latest trends and <strong>applying practical solutions immediately,</strong> we create strategies that aren't just theoretical — they work in the real world.
-            </p>
-            <hr>
-            <p>At <strong> Natter LLC,</strong> we're not just service providers; we're your partners in growth. Whether it's through consulting, automation, or strategy, our goal is to help you unlock your business's full potential.
-                Let's build something extraordinary together.
-            </p>
-        </div>        
-        
-
-        <div class="text-wrap" id="wegetasked">
-
-            <h2>WE GET ASKED</h2>
-
-            <p>Here are answers to the most common questions we receive.
-                If you're wondering about something not covered here,
-                feel free to chat with our chatbot down below!
-            </p>
-            <hr><br>
-            <h3>1. What makes your company different from others?</h3>
-
-            <p><strong>We do this 'cause we love it, not because we have to.</strong></p>
-
-            <p>That's why we approach every project with expertise and passion. <br>
-                While we're newer to this particular system, our team has years of experience in digital services and a track record of delivering results. <strong>We work harder than anyone to ensure you're not just satisfied but genuinely impressed.</strong>
-            </p>
-            <hr><br>
-
-            <h3>2. When can I expect to see results?</h3>
-
-            <p>That depends on the service. For example:</p>
-
-            <ul>
-                <li>Our AI-driven automation systems often show results within a week of implementation.</li>
-                <li>Email campaigns can generate responses within hours.</li>
-                <li>Consulting offers actionable insights right after our session.</li>
-            </ul>
-
-            <hr><br>
-
-            <h3>3. Why should I trust your consulting services?</h3>
-
-            <p>Because we live and breathe business strategy. <br>
-                Our founder has spent a lifetime studying what makes businesses thrive and has helped countless clients earn more. <br>
-                With the AI revolution, it has only became much easier and faster! <br>
-                You'll get actionable insights, not generic advice.
-            </p>
-
-            <hr><br>
-
-            <h3>4. How do your prices compare to others?</h3>
-
-            <p>We focus on delivering <strong>maximum value at a fair price.</strong><br>
-                Chek out our offer "Best Value". <br>
-                Instead of inflating costs, we ensure you only pay for the apsolutely neccesery stuf. Since we're building our reputation, we go the extra mile to prove our worth and deliver more than you'd expect for the cost.
-            </p>
-            <hr><br>
-
-            <h3>5. Do you offer ongoing support?</h3>
-            <p>Yes. Our relationship doesn't end after delivery. We ensure everything runs smoothly and remains up-to-date. If you ever need adjustments or have questions, we're just a call or message away.</p>
-            <hr><br>
-
-            <h3>6. Can your services fit my industry?</h3>
-            <p>We don't limit ourselves to one industry. Whether you run a spa, manage an e-commerce store, or lead a corporate team, we'll apply proven methods that align with your goals. If your business can benefit from better systems and smarter tools, we're the right fit.</p>
-
-            <hr><br>
-            <h3>7. Can you help with specific business challenges?</h3>
-            <p>Absolutely. If there's something holding your business back — whether it's inefficiency, customer retention, or revenue growth — we'll focus on finding the right solution to fix it. We don't just talk ideas; we focus on getting results.</p>
-
-            <h3>8. How do your email services work?</h3>
-            <p>We can send <strong>1,000 to 5,000 emails daily,</strong> personalized for your audience. These campaigns are designed to grab attention, spark interest, and drive action. With precise targeting and follow-ups, you'll see real engagement real quick.</p>
-            <hr><br>
-            <h3>9. How can AI chatbots and voicebots improve my business?</h3>
-            <p>Imagine having a team that works <strong>24/7,</strong> speaks multiple languages, and handles hundreds of inquiries at once — that's what AI bots can do. They save time, cut costs, and ensure your customers get immediate answers, no matter the time or place.</p>
-            <hr><br>
-            <h3>10. How do I know if your services are the right fit?</h3>
-
-            <p>The easiest way to find out is to <strong>book a session with us.</strong> We'll talk about your business, identify opportunities, and suggest immediate improvements. You'll leave with clarity and a concrete plan to move forward.</p>
-        </div>
-
     </div>
-</div>
 
-<footer></footer>
+    <footer></footer>
 
-<script>
-function book() {
-    // Get the modal
-    const modal = document.getElementById("confirmationModal");
-    
-    // Get the close button
-    const closeBtn = modal.querySelector(".close-button");
-    
-    // Show the modal
-    modal.classList.add('show');
-    
-    // Close modal when clicking the close button
-    closeBtn.onclick = function() {
-        modal.classList.remove('show');
-    }
-    
-    // Close modal when clicking outside of it
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.classList.remove('show');
+    <script>
+        function book() {
+            // Get the modal
+            const modal = document.getElementById("confirmationModal");
+
+            // Get the close button
+            const closeBtn = modal.querySelector(".close-button");
+
+            // Show the modal
+            modal.classList.add('show');
+
+            // Close modal when clicking the close button
+            closeBtn.onclick = function () {
+                modal.classList.remove('show');
+            }
+
+            // Close modal when clicking outside of it
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.classList.remove('show');
+                }
+            }
         }
-    }
-}
-</script>
+    </script>
 </body>
+
 </html>

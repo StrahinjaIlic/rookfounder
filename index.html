@@ -23,7 +23,7 @@
             <!-- Title and Subtitle Section -->
             <div id="title-section" style="text-align: center; padding: 10px 20px; background: transparent;">
                 <h2
-                    style="font-size: 46px; font-weight: 600; color: #ff9700; text-transform: uppercase; text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.2);">
+                    style="font-size: 46px; font-weight: 600; color: #ff9700; text-transform: uppercase;">
                     5 STAR ONLY REVIEW SYSTEM</h2>
                 <br>
                 <h3 style="font-size: 32px; font-weight: 800; color: #2ecc71; text-transform: uppercase;">NO START-UP
@@ -175,6 +175,43 @@
                         </ul>
                     </div>
                 </div>
+
+                <p style="color: white; font-size: 22px; font-weight: 600;">
+                    "Reputation is a huge decision-making factor..
+                    <br>
+                    .. it can be your greatest online asset - or liability."
+                </p>
+
+                <!-- Video Placeholder with Click-to-Play -->
+                <div style="text-align: center; margin: 50px auto; width: 100%; max-width: 900px;">
+                    <div
+                        style="position: relative; background: rgba(255, 255, 255, 0.1); border: 2px solid rgba(255, 255, 255, 0.2); border-radius: 12px; padding: 0; text-align: center; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);">
+
+                        <!-- Video Element (Click to Play) -->
+                        <video id="test_video" width="100%" height="auto" poster="img/video-thumbnail.jpg"
+                            style="border-radius: 12px;" controls>
+                            <source src="videos/test_video.mp4" type="video/mp4">
+                            <source src="videos/test_video.webm" type="video/webm">
+                            Your browser does not support the video tag.
+                        </video>
+
+                        <!-- Play Button Overlay -->
+                        <div id="playButton"
+                            style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 60px; color: white; cursor: pointer; opacity: 0.8;">
+                            ▶
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- JavaScript for Play Button -->
+                <script>
+                    document.getElementById('playButton').addEventListener('click', function () {
+                        var video = document.getElementById('test_video');
+                        video.play();
+                        this.style.display = 'none'; // Hide play button after clicking
+                    });
+                </script>
 
                 <!-- Divider -->
                 <hr>

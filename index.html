@@ -8,10 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1">
     <meta name="description" content="Natter LLC">
 
-    <link media="all" rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" />
+    <link media="all" rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" />
     <link media="all" rel="stylesheet" type="text/css" href="/styles/css/app.css" />
-
     <script async src="https://js.stripe.com/v3/buy-button.js"></script>
 </head>
 
@@ -23,7 +21,7 @@
 
             <!-- Title and Subtitle Section -->
             <div id="title-section" style="text-align: center; padding: 10px 20px; background: transparent;">
-                <h2 style="font-size: 46px; font-weight: 600; color: white; text-transform: uppercase; text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.2);">
+                <h2 style="font-size: 46px; font-weight: 600; color: #ff9700; text-transform: uppercase; text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.2);">
                     5 STAR ONLY REVIEW SYSTEM</h2>
                 <br>
                 <h3 style="font-size: 32px; font-weight: 800; color: #2ecc71; text-transform: uppercase;">NO START-UP FEE</h3>
@@ -63,24 +61,78 @@
 
                     .review-list {
                         list-style-type: disc;
-                        /* Use bullet style */
                         padding-left: 20px;
-                        /* Indent to display bullets properly */
                         margin: 0;
                     }
 
-                    /* Spacing for list items in the left box */
                     .left-box .review-list li {
                         color: white;
                         font-size: 18px;
                         margin-bottom: 20px;
                     }
 
-                    /* Spacing for list items in the right box */
                     .right-box .review-list li {
                         color: white;
                         font-size: 18px;
                         margin-bottom: 30px;
+                    }
+
+                    .consulting-title {
+                        font-size: 36px;
+                        font-weight: 700;
+                        color: white;
+                    }
+
+                    .consulting-text {
+                        font-size: 22px;
+                        font-weight: 400;
+                        color: white;
+                        line-height: 1.8;
+                        margin-bottom: 30px;
+                        padding: 0 30px;
+                        text-align: left;
+                    }
+
+                    /* Bullet points on same line */
+                    .consulting-bullets {
+        display: flex;
+        flex-direction: column; /* Stack the bullets vertically */
+        gap: 20px; /* Add space between the bullet points */
+        margin: 0;
+        padding-left: 0;
+    }
+
+    .consulting-bullets li {
+        color: white;
+        font-size: 22px;
+        font-weight: 400;
+        display: block; /* Ensure each item is on a new line */
+        list-style-type: disc;
+    }
+
+    .consulting-bullets li::before {
+        content: "• ";
+        color: #ff9700; /* Orange color for bullets */
+        font-weight: bold;
+        margin-right: 10px;
+    }
+
+                    .game-changing-session-btn {
+                        padding: 20px 40px;
+                        font-size: 22px;
+                        background-color: #2ecc71;
+                        color: white;
+                        border: none;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        text-align: center;
+                        display: inline-block;
+                        margin-top: 30px;
+                    }
+
+                    .highlight {
+                        color: #ff9700;
+                        font-weight: bold;
                     }
                 </style>
 
@@ -116,61 +168,81 @@
                     </div>
                 </div>
 
-            <!-- Divider -->
-            <hr>
+                <!-- Divider -->
+                <hr>
 
-            <!-- Call to Action Section -->
-            <div style="text-align: center; margin-top: 50px;">
-                <h2 style="font-size: 36px; font-weight: 800; color: #ff9700;">Let’s Keep Em Coming!</h2>
                 <br>
-                <div style="display: flex; justify-content: space-around; margin-top: 40px;">
-                    <button onclick="book()" style="padding: 15px 30px; font-size: 18px; background-color: #2ecc71; color: white; border: none; border-radius: 5px; cursor: pointer;">
-                        BOOK A 15 MIN FREE CALL
-                    </button>
-                    <button onclick="window.location.href='#read-offer'" style="padding: 15px 30px; font-size: 18px; background-color: #ff9700; color: white; border: none; border-radius: 5px; cursor: pointer;">
-                        READ THE OFFER
-                    </button>
-                </div>
-            </div>
+                <br>
 
-            <br> <br>
-
-            <!-- Divider -->
-            <hr>
-
-            <!-- Why Us Section -->
-            <div style="text-align: center; margin-top: 50px;">
                 <h2 style="font-size: 36px; font-weight: 800; color: white;">Why Us?</h2>
-                <br>
-                <!-- Updated button to link to the PDF -->
-                <a href="/assets/consulting_background.pdf" download>
-                    <button style="padding: 15px 30px; font-size: 18px; background-color: #3498db; color: white; border: none; border-radius: 5px; cursor: pointer;">
-                        CONSULTING BACKGROUND - COPY (PDF)
-                    </button>
-                </a>
+
+                <div style="text-align: center; margin-top: 50px;">
+                    <h2 class="consulting-title">Consulting Background</h2>
+                    <p class="consulting-text">
+                        First of all, we started as a consulting company — driven purely by our passion for strategy.<br><br>
+                        Creating offers, designing systems for capturing attention and converting it into sales — that’s always been at the heart of what we do, simply because we love it.<br><br>
+                        Over time, one truth became crystal clear: Without a strong online reputation, even the best strategies struggle.<br><br>
+                        No other factor impacts business success as directly, quickly, and efficiently as Google reputation.<br><br>
+                        That's why we built the Reputation System you see today — a solution that quickly and practically addresses the root problems most companies ignore.<br><br>
+                        But reputation is only the beginning.<br><br>
+                        When you work with us, you’re not just buying five-star reviews — you're gaining access to a team that lives and breathes business architecture.<br><br>
+                        So, if you're ambitious about your business, product, service, or even just your raw idea aiming for epic goals — we're here to build a complete strategy and exit plan for you.<br><br>
+                        That’s what we do.<br><br>
+                        Take a look at just a few examples of how an ordinary skill, product, or service can expand into enormous success:<br>
+                        examples: chef / modular homes / hostel<br><br>
+                        If you want your own version of an Exit Plan, book your own session now.<br><br>
+                    </p>
+
+                    <!-- Bullet Points in the same line -->
+                    <ul class="consulting-bullets">
+                        <li>Three versions of your Grand Slam offer that separate you from any competition</li>
+                        <li>Copy for a website, ad, or VSL (most effective word combination that sells)</li>
+                        <li>A list of AI solutions for automating and scaling your business</li>
+                        <li>A 90-day action plan for rapid growth</li>
+                        <li>A 12-month domination framework</li>
+                        <li>A five-year exit (retirement) strategy tailored to your skill, service, or business</li>
+                    </ul>
+                    <br><br>
+
+                    <p class="consulting-text">
+                        Additionally:<br><br>
+                        After the call, you’ll have the option to apply the $300 session fee as a full downpayment
+                        toward any next service — like implementing your Reputation System — making the call effectively
+                        free.<br><br>
+                        It all starts with one clear step forward, take advantage of this offer and👉 <strong>Book Your
+                            Game-Changing Session</strong>
+                        <br><br>
+                    </p>
+
+                    <!-- Book Game Changing Session Button -->
+                    <a href="javascript:void(0)" onclick="book()" style="display: inline-block; text-align: center;">
+                        <button class="game-changing-session-btn">
+                            GAME CHANGING SESSION
+                        </button>
+                    </a>
+                </div>
+
             </div>
 
         </div>
 
-    </div>
+        <footer></footer>
 
-    <footer></footer>
-
-    <script>
-        function book() {
-            const modal = document.getElementById("confirmationModal");
-            const closeBtn = modal.querySelector(".close-button");
-            modal.classList.add('show');
-            closeBtn.onclick = function () {
-                modal.classList.remove('show');
-            }
-            window.onclick = function (event) {
-                if (event.target == modal) {
+        <script>
+            function book() {
+                const modal = document.getElementById("confirmationModal");
+                const closeBtn = modal.querySelector(".close-button");
+                modal.classList.add('show');
+                closeBtn.onclick = function () {
                     modal.classList.remove('show');
                 }
+                window.onclick = function (event) {
+                    if (event.target == modal) {
+                        modal.classList.remove('show');
+                    }
+                }
             }
-        }
-    </script>
+        </script>
 
 </body>
 

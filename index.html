@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1">
     <meta name="description" content="Natter LLC">
 
+
     <link media="all" rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" />
     <link media="all" rel="stylesheet" type="text/css" href="/styles/css/app.css" />
@@ -177,6 +178,177 @@
                         border-radius: 5px;
                         cursor: pointer;
                     }
+
+                    /* Improved Modal Styles */
+                    .modal {
+                        display: none;
+                        position: fixed;
+                        z-index: 9999;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: rgba(0, 0, 0, 0.8);
+                        justify-content: center;
+                        align-items: center;
+                    }
+
+                    .modal.show {
+                        display: flex !important;
+                    }
+
+                    .modal-content {
+                        background: #fff;
+                        padding: 40px;
+                        border-radius: 12px;
+                        width: 90%;
+                        max-width: 500px;
+                        position: relative;
+                        text-align: left;
+                        color: black;
+                    }
+
+                    .modal-content h2 {
+                        margin-top: 0;
+                        color: #333;
+                        font-size: 24px;
+                        font-weight: 700;
+                    }
+
+                    .modal-content p {
+                        color: #666;
+                        font-size: 16px;
+                        margin-bottom: 20px;
+                    }
+
+                    .modal-content label {
+                        display: block;
+                        margin-top: 15px;
+                        font-weight: 600;
+                        color: #333;
+                        font-size: 14px;
+                    }
+
+                    .modal-content input {
+                        width: 100%;
+                        padding: 12px;
+                        margin-top: 6px;
+                        margin-bottom: 16px;
+                        border: 1px solid #ddd;
+                        border-radius: 6px;
+                        font-size: 16px;
+                        box-sizing: border-box;
+                    }
+
+                    .modal-content input:focus {
+                        outline: none;
+                        border-color: #007BFF;
+                        box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+                    }
+
+                    .modal-content .submit-btn {
+                        background-color: #007BFF;
+                        color: white;
+                        width: 100%;
+                        margin-top: 10px;
+                        padding: 12px;
+                        font-size: 16px;
+                        font-weight: 600;
+                        border: none;
+                        border-radius: 6px;
+                        cursor: pointer;
+                    }
+
+                    .modal-content .submit-btn:hover {
+                        background-color: #0056b3;
+                    }
+
+                    .modal-content .cancel-btn {
+                        background-color: transparent;
+                        color: #007BFF;
+                        text-align: center;
+                        display: block;
+                        width: 100%;
+                        margin-top: 10px;
+                        padding: 12px;
+                        font-size: 16px;
+                        border: none;
+                        cursor: pointer;
+                        text-decoration: underline;
+                    }
+
+                    .modal-content .cancel-btn:hover {
+                        color: #0056b3;
+                    }
+
+                    .close-button {
+                        position: absolute;
+                        top: 15px;
+                        right: 20px;
+                        font-size: 28px;
+                        font-weight: bold;
+                        cursor: pointer;
+                        color: #666;
+                    }
+
+                    .close-button:hover {
+                        color: #000;
+                    }
+
+                    #formError {
+                        color: #dc3545;
+                        display: none;
+                        margin-top: 10px;
+                        font-size: 14px;
+                        background-color: #f8d7da;
+                        border: 1px solid #f5c6cb;
+                        border-radius: 4px;
+                        padding: 10px;
+                    }
+
+                    /* Force override conflicting styles */
+                    #offerModal .modal-content {
+                        background-color: #ffffff !important;
+                        color: #000000 !important;
+                        padding: 40px;
+                        border-radius: 12px;
+                        width: 90%;
+                        max-width: 500px;
+                        position: relative;
+                        text-align: left;
+                        font-family: sans-serif;
+                    }
+
+                    #offerModal .modal-content input {
+                        background-color: #ffffff !important;
+                        border: 1px solid #ccc !important;
+                        color: #000 !important;
+                    }
+
+                    #offerModal .submit-btn {
+                        background-color: #007BFF !important;
+                        font-weight: bold;
+                        border-radius: 6px;
+                        color: white;
+                        width: 100%;
+                        margin-top: 10px;
+                        padding: 12px;
+                        border: none;
+                        cursor: pointer;
+                    }
+
+                    #offerModal .cancel-btn {
+                        background-color: transparent;
+                        color: #007BFF;
+                        text-align: center;
+                        display: block;
+                        width: 100%;
+                        margin-top: 10px;
+                        padding: 12px;
+                        border: none;
+                        cursor: pointer;
+                        text-decoration: underline;
+                    }
                 </style>
 
                 <!-- Video Placeholder with Click-to-Play -->
@@ -212,24 +384,12 @@
                         </button>
 
                         <!-- Button 2: Read the Offer (download PDF) -->
-                        <button onclick="downloadOffer()"
+                        <button class="read-offer-btn"
                             style="padding: 15px 30px; font-size: 28px; font-weight: 1000; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer;">
                             READ THE OFFER
                         </button>
                     </div>
                 </div>
-
-                <!-- Add this at the end of <body> (or where your other scripts are) -->
-                    <script>
-                        function downloadOffer() {
-                            const link = document.createElement('a');
-                            link.href = 'assets/consulting_background.pdf';
-                            link.download = 'consulting_background.pdf';
-                            document.body.appendChild(link);
-                            link.click();
-                            document.body.removeChild(link);
-                        }
-                    </script>
 
                 <p style="
                 color: white;
@@ -354,7 +514,7 @@
                         </button>
 
                         <!-- Button 2: Read the Offer (download PDF) -->
-                        <button onclick="downloadOffer()"
+                        <button class="read-offer-btn"
                             style="padding: 15px 30px; font-size: 28px; font-weight: 1000; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer;">
                             READ THE OFFER
                         </button>
@@ -376,7 +536,7 @@
                     <p class="consulting-text">
                         First of all, we started as a consulting company — driven purely by our passion for
                         strategy.<br><br>
-                        Creating offers, designing systems for capturing attention and converting it into sales — that’s
+                        Creating offers, designing systems for capturing attention and converting it into sales — that's
                         always been at the heart of what we do, simply because we love it.<br><br>
                         Over time, one truth became crystal clear: Without a strong online reputation, even the best
                         strategies struggle.<br><br>
@@ -385,11 +545,11 @@
                         That's why we built the Reputation System you see today — a solution that quickly and
                         practically addresses the root problems most companies ignore.<br><br>
                         But reputation is only the beginning.<br><br>
-                        When you work with us, you’re not just buying five-star reviews — you're gaining access to a
+                        When you work with us, you're not just buying five-star reviews — you're gaining access to a
                         team that lives and breathes business architecture.<br><br>
                         So, if you're ambitious about your business, product, service, or even just your raw idea aiming
                         for epic goals — we're here to build a complete strategy and exit plan for you.<br><br>
-                        That’s what we do.<br><br>
+                        That's what we do.<br><br>
                         Take a look at just a few examples of how an ordinary skill, product, or service can expand into
                         enormous success:<br>
                         examples: chef / modular homes / hostel<br><br>
@@ -414,7 +574,7 @@
 
                 <p class="consulting-text">
                     Additionally:<br><br>
-                    After the call, you’ll have the option to apply the $300 session fee as a full downpayment
+                    After the call, you'll have the option to apply the $300 session fee as a full downpayment
                     toward any next service — like implementing your Reputation System — making the call effectively
                     free.<br><br>
                     It all starts with one clear step forward, take advantage of this offer and
@@ -474,6 +634,87 @@
                 }
             }
         }
+    </script>
+
+    <!-- Improved Modal form -->
+    <div id="offerModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeOfferModal()">&times;</span>
+            <h2>Download the Offer</h2>
+            <p>Please enter your info to get access to the offer PDF:</p>
+            <form id="offerForm">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="John Doe" required />
+
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="john@example.com" required />
+
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="+1234567890" required />
+
+                <button type="submit" class="submit-btn">Download PDF</button>
+                <button type="button" class="cancel-btn" onclick="closeOfferModal()">Cancel</button>
+
+                <p id="formError">Please fill in all fields correctly.</p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script>
+        const offerModal = document.getElementById("offerModal");
+        const form = document.getElementById("offerForm");
+        const errorMsg = document.getElementById("formError");
+
+        // Handle all READ THE OFFER buttons by class
+        document.querySelectorAll(".read-offer-btn").forEach(btn => {
+            btn.addEventListener("click", () => {
+                offerModal.classList.add("show");
+            });
+        });
+
+        function closeOfferModal() {
+            offerModal.classList.remove("show");
+            errorMsg.style.display = "none";
+        }
+
+        // Close modal when clicking outside
+        window.addEventListener("click", function (event) {
+            if (event.target === offerModal) {
+                closeOfferModal();
+            }
+        });
+
+        form.addEventListener("submit", async function (e) {
+            e.preventDefault();
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const phone = document.getElementById("phone").value.trim();
+            const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+            const phoneValid = /^[\d\+\-\(\)\s]{6,}$/.test(phone);
+
+            if (!name || !emailValid || !phoneValid) {
+                errorMsg.style.display = "block";
+                return;
+            }
+
+            // Send to your n8n webhook (optional)
+            // await fetch("https://your-n8n-webhook-url", {
+            //     method: "POST",
+            //     headers: { "Content-Type": "application/json" },
+            //     body: JSON.stringify({ name, email, phone })
+            // });
+
+            // Trigger download
+            const link = document.createElement("a");
+            link.href = "assets/consulting_background.pdf";
+            link.download = "consulting_background.pdf";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+
+            closeOfferModal();
+        });
     </script>
 
 </body>

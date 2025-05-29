@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Start Free Trial</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        button {
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #111;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: #222;
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 400px;
+            width: 100%;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        h2 {
+            margin-bottom: 30px;
+            font-size: 28px;
+            text-align: center;
+            color: #ff9700;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background-color: #2ecc71;
+            border: none;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            box-sizing: border-box;
+        }
+
+        button:hover {
+            background-color: #27ae60;
+        }
+
+        .message {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #2ecc71;
+            display: none;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="padding: 20px;">
+        <a href="index.html" style="font-weight: bold; color: #007BFF;">← Back to Homepage</a>
+    </div>
+
+    <div class="container">
+        <h2>Start Your Free Trial</h2>
+        <form id="signupForm">
+            <input type="text" id="name" placeholder="Full Name" required>
+            <input type="email" id="email" placeholder="Email Address" required>
+            <input type="tel" id="phone" placeholder="Phone Number" required>
+            <input type="text" id="company" placeholder="Company Name" required>
+            <button type="submit">Start Trial</button>
+        </form>
+        <div class="message" id="successMsg">✅ You're in! Welcome aboard.</div>
+    </div>
+
+    <script>
+        const form = document.getElementById('signupForm');
+        const msg = document.getElementById('successMsg');
+
+        form.addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const company = document.getElementById('company').value;
+
+            const payload = {
+                name,
+                email,
+                phone,
+                company
+            };
+
+            try {
+                await fetch('https://your-n8n-endpoint.com/webhook/signup-client', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                msg.style.display = 'block';
+                form.reset();
+            } catch (err) {
+                alert('Something went wrong. Please try again.');
+                console.error(err);
+            }
+        });
+    </script>
+</body>
+
+</html>

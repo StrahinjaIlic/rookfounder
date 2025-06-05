@@ -389,7 +389,7 @@
                         <div style="display: flex; justify-content: space-around; margin-top: 30px;">
 
                             <!-- Button 1: Book a Free Call -->
-                            <button onclick="book()"
+                            <button onclick="openCallModal()"
                                 style="padding: 15px 30px; font-size: 28px; font-weight: 1000; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer;">
                                 BOOK A FREE CALL
                             </button>
@@ -520,7 +520,7 @@
                         <div style="display: flex; justify-content: space-around; margin-top: 30px;">
 
                             <!-- Button 1: Book a Free Call -->
-                            <button onclick="book()"
+                            <button onclick="openCallModal()"
                                 style="padding: 15px 30px; font-size: 28px; font-weight: 1000; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer;">
                                 BOOK A FREE CALL
                             </button>
@@ -745,6 +745,132 @@
                 }, 1000);
             });
         </script>
+
+        <!-- Book a Free Call Modal (visually aligned with offer modal) -->
+        <div id="callModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button" onclick="closeCallModal()">&times;</span>
+                <h2>Book a Free Call</h2>
+                <p>Please enter your info to continue:</p>
+                <form id="callForm">
+                    <label for="callName">Full Name</label>
+                    <input type="text" id="callName" placeholder="John Doe" required />
+
+                    <label for="callEmail">Email</label>
+                    <input type="email" id="callEmail" placeholder="john@example.com" required />
+
+                    <label for="callPhone">Phone Number</label>
+                    <input type="tel" id="callPhone" placeholder="+1234567890" required />
+
+                    <p style="color: #dc3545; font-weight: 1000; margin-top: 10px; font-size: 14px;">
+                        Best watched after viewing the video
+                     </p>
+
+                    <p id="callFormError"
+                        style="color: #dc3545; display: none; margin-top: 10px; font-size: 14px; background-color: #f8d7da; border: 1px solid #f5c6cb; border-radius: 4px; padding: 10px;">
+                        Please fill in all fields correctly and confirm that you’ve watched the video.
+                    </p>
+
+                    <!-- <div style="display: flex; align-items: center; margin-top: 10px;">
+                        <input type="checkbox" id="watchedVideo" style="width: auto; margin-right: 10px;" />
+                        <label for="watchedVideo" style="margin: 0; font-size: 14px;">Have you watched the
+                            video?</label>
+                    </div> -->
+
+                    <button type="submit" class="submit-btn" id="bookBtn">Continue</button>
+                    <button type="button" class="cancel-btn" onclick="closeCallModal()">Cancel</button>
+                </form>
+            </div>
+        </div>
+
+        <script>
+            const callModal = document.getElementById("callModal");
+            const callForm = document.getElementById("callForm");
+            const bookBtn = document.getElementById("bookBtn");
+
+            function openCallModal() {
+                callModal.classList.add("show");
+            }
+
+            function closeCallModal() {
+                callModal.classList.remove("show");
+            }
+
+            callForm.addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                const name = document.getElementById("callName").value.trim();
+                const email = document.getElementById("callEmail").value.trim();
+                const phone = document.getElementById("callPhone").value.trim();
+
+                const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+                const phoneValid = /^[\d\+\-\(\)\s]{6,}$/.test(phone);
+
+                const errorEl = document.getElementById("callFormError");
+
+                if (!name || !emailValid || !phoneValid) {
+                    errorEl.style.display = "block";
+                    return;
+                }
+
+                errorEl.style.display = "none";
+                window.open("https://calendar.app.google/1vSPXybrV37Y11mm6", "_blank");
+                closeCallModal();
+            });
+
+            window.addEventListener("click", function (event) {
+                if (event.target === callModal) {
+                    closeCallModal();
+                }
+            });
+        </script>
+
+        <style>
+            #callModal .modal-content {
+                margin: auto;
+                background-color: #ffffff !important;
+                color: #000000 !important;
+                padding: 40px;
+                border-radius: 12px;
+                width: 90%;
+                max-width: 500px;
+                position: relative;
+                text-align: left;
+                font-family: sans-serif;
+            }
+
+            #callModal .modal-content input {
+                background-color: #ffffff !important;
+                border: 1px solid #ccc !important;
+                color: #000 !important;
+            }
+
+            #callModal .submit-btn {
+                background-color: #007BFF !important;
+                font-weight: bold;
+                border-radius: 6px;
+                color: white;
+                width: 100%;
+                margin-top: 10px;
+                padding: 12px;
+                border: none;
+                cursor: pointer;
+            }
+
+            #callModal .cancel-btn {
+                background-color: transparent;
+                color: #007BFF;
+                text-align: center;
+                display: block;
+                width: 100%;
+                margin-top: 10px;
+                padding: 12px;
+                border: none;
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        </style>
+
 
 </body>
 

@@ -704,11 +704,15 @@
                 }
             });
 
+            const TEST_MODE = true; // setuj na false kada prelazis u produkciju
+
             form.addEventListener("submit", async function (e) {
                 e.preventDefault();
+
                 const name = document.getElementById("name").value.trim();
                 const email = document.getElementById("email").value.trim();
                 const phone = document.getElementById("phone").value.trim();
+
                 const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
                 const phoneValid = /^[\d\+\-\(\)\s]{6,}$/.test(phone);
 
@@ -720,30 +724,38 @@
                 errorMsg.style.display = "none";
                 document.getElementById("loadingSpinner").style.display = "block";
 
-                // await fetch("https://your-n8n-webhook-url", {
-                //     method: "POST",
-                //     headers: { "Content-Type": "application/json" },
-                //     body: JSON.stringify({ name, email, phone })
-                // });
+                const url = TEST_MODE
+                    ? `https://n8n-llc.onrender.com/webhook-test/test-payment?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&phone=${encodeURIComponent(phone)}`
+                    : "https://n8n-llc.onrender.com/webhook/test-payment";
+
+                try {
+                    await fetch(url, {
+                        method: TEST_MODE ? "GET" : "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: TEST_MODE ? undefined : JSON.stringify({ name, email, phone })
+                    });
+                } catch (error) {
+                    console.warn("N8N fallback aktiviran:", error);
+                }
+
+                // PDF i uspešna poruka idu svakako
+                const link = document.createElement("a");
+                link.href = "assets/Strahinja_Payment_Link_Test.pdf";
+                link.download = "Strahinja_Payment_Link_Test.pdf";
+                link.style.display = "none";
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+
+                document.getElementById("loadingSpinner").style.display = "none";
+                document.getElementById("successMessage").style.display = "block";
 
                 setTimeout(() => {
-                    const link = document.createElement("a");
-                    link.href = "assets/consulting_background.pdf";
-                    link.download = "consulting_background.pdf";
-                    link.style.display = "none";
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
-
-                    document.getElementById("loadingSpinner").style.display = "none";
-                    document.getElementById("successMessage").style.display = "block";
-
-                    setTimeout(() => {
-                        document.getElementById("successMessage").style.display = "none";
-                        closeOfferModal();
-                    }, 3000);
-                }, 1000);
+                    document.getElementById("successMessage").style.display = "none";
+                    closeOfferModal();
+                }, 3000);
             });
+
         </script>
 
         <!-- Book a Free Call Modal (visually aligned with offer modal) -->
@@ -764,7 +776,7 @@
 
                     <p style="color: #dc3545; font-weight: 1000; margin-top: 10px; font-size: 14px;">
                         *Best watched after viewing the video
-                     </p>
+                    </p>
 
                     <p id="callFormError"
                         style="color: #dc3545; display: none; margin-top: 10px; font-size: 14px; background-color: #f8d7da; border: 1px solid #f5c6cb; border-radius: 4px; padding: 10px;">

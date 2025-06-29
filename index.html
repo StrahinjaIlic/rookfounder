@@ -28,19 +28,33 @@
                 </h2>
 
                 <div id="title-section"
-                    style="text-align: center; padding: 0 20px 20px 20px; background: transparent; margin-top: 0;">
-
+                    style="text-align: center; padding: 0 10px 10px 10px; background: transparent; margin-top: 0;">
 
                     <h2 style="
-                        font-size: 64px;
+                        font-size: 54px;
+                        font-family: 'Anton', sans-serif;
+                        font-weight: 1000;
+                        color: #ff9700;
+                        margin: 0;
+                        letter-spacing: 1px;
+                        line-height: 1.1;
+                        white-space: nowrap; 
+                        ">
+                        <strong>5 STAR ONLY REVIEW SYSTEM</strong>
+                    </h2>
+
+                    <h2 style="
+                        font-size: 44px;
                         font-family: 'Anton', sans-serif;
                         font-weight: 1000;
                         color: #ff9700;
                         margin: 0;
                         letter-spacing: 1px;
                         line-height: 1.1;">
-                        <strong>5 STAR ONLY REVIEW SYSTEM</strong>
+                        <strong>that triples potential sales & increases revenue by at least 35%-60%</strong>
                     </h2>
+
+                    <br><br> <br>
 
                     <h3 style="
                     font-size: 40px;
@@ -56,7 +70,7 @@
                 </div>
             </div>
 
-            <div style="text-align: center; margin-top: 40px;">
+            <div style="text-align: center; margin-top: 20px;">
 
                 <!-- <a href="signup.html" style="text-decoration: none;">
                     <button
@@ -115,8 +129,8 @@
                         }
 
                         .consulting-text {
-                            font-size: 22px;
-                            font-weight: 400;
+                            font-size: 38px;
+                            font-weight: 700;
                             color: white;
                             line-height: 1.8;
                             margin-bottom: 30px;
@@ -365,10 +379,10 @@
                             style="position: relative; background: rgba(216, 12, 12, 0.1); border: none; border-radius: 12px; padding: 0; text-align: center; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);">
 
                             <!-- Video Element (Click to Play) -->
-                            <video id="test_video" width="100%" height="auto" poster="img/video-thumbnail.jpg"
+                            <video id="live_video" width="100%" height="auto" poster="img/video-thumbnail.jpg"
                                 style="border-radius: 12px;" controls>
-                                <source src="videos/test_video.mp4" type="video/mp4">
-                                <source src="videos/test_video.webm" type="video/webm">
+                                <source src="videos/live_video.mp4" type="video/mp4">
+                                <source src="videos/live_video.webm" type="video/webm">
                                 Your browser does not support the video tag.
                             </video>
 
@@ -391,7 +405,7 @@
                                 BOOK A FREE CALL
                             </button>
 
-                            <!-- Button 2: Read the Offer (download PDF) -->
+                            <!-- Button 1: Read the Offer (download PDF) -->
                             <button class="read-offer-btn"
                                 style="padding: 15px 30px; font-size: 28px; font-weight: 1000; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer;">
                                 READ THE OFFER
@@ -504,7 +518,7 @@
                     <!-- JavaScript for Play Button -->
                     <script>
                         document.getElementById('playButton').addEventListener('click', function () {
-                            var video = document.getElementById('test_video');
+                            var video = document.getElementById('live_video');
                             video.play();
                             this.style.display = 'none'; // Hide play button after clicking
                         });
@@ -700,7 +714,7 @@
                 }
             });
 
-            const TEST_MODE = true; // setuj na false kada prelazis u produkciju
+            const TEST_MODE = false; // setuj na false kada prelazis u produkciju
 
             form.addEventListener("submit", async function (e) {
                 e.preventDefault();
@@ -721,8 +735,8 @@
                 document.getElementById("loadingSpinner").style.display = "block";
 
                 const url = TEST_MODE
-                    ? `https://n8n-llc.onrender.com/webhook-test/test-payment?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&phone=${encodeURIComponent(phone)}`
-                    : "https://n8n-llc.onrender.com/webhook/test-payment";
+                    ? `https://bajo.app.n8n.cloud/webhook-test/cb2a1087-0cfd-465e-bde9-ab0988eb7f9b?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&phone=${encodeURIComponent(phone)}`
+                    : "https://natterllc.app.n8n.cloud/webhook/test-payment";
 
                 try {
                     await fetch(url, {
@@ -736,8 +750,8 @@
 
                 // PDF i uspešna poruka idu svakako
                 const link = document.createElement("a");
-                link.href = "assets/Strahinja_Payment_Link_Test.pdf";
-                link.download = "Strahinja_Payment_Link_Test.pdf";
+                link.href = "assets/the_offer.pdf";
+                link.download = "the_offer.pdf";
                 link.style.display = "none";
                 document.body.appendChild(link);
                 link.click();

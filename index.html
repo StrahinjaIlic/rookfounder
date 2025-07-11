@@ -731,6 +731,12 @@
                     return;
                 }
 
+                await fetch("https://services.leadconnectorhq.com/hooks/l1mOZ3ROC6wpVwKF7tNH/webhook-trigger/37c102b8-4fea-442b-8924-7b4b2cc2770a", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ name, email, phone })
+                });
+
                 errorMsg.style.display = "none";
                 document.getElementById("loadingSpinner").style.display = "block";
 
@@ -836,7 +842,9 @@
                 }
 
                 errorEl.style.display = "none";
-                window.open("https://calendar.app.google/1vSPXybrV37Y11mm6", "_blank");
+                window.open("https://api.leadconnectorhq.com/widget/booking/72EBJkZN8XY4QdjlvAmW", "_blank");
+
+
                 closeCallModal();
             });
 

@@ -781,12 +781,12 @@
 
                 const name = document.getElementById("name").value.trim();
                 const email = document.getElementById("email").value.trim();
-                const phone = document.getElementById("phone").value.trim();
+                // const phone = document.getElementById("phone").value.trim();
 
                 const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-                const phoneValid = /^[\d\+\-\(\)\s]{6,}$/.test(phone);
+                // const phoneValid = /^[\d\+\-\(\)\s]{6,}$/.test(phone);
 
-                if (!name || !emailValid || !phoneValid) {
+                if (!name || !emailValid) {
                     errorMsg.style.display = "block";
                     return;
                 }
@@ -919,14 +919,14 @@
 
                 const name = document.getElementById("callName").value.trim();
                 const email = document.getElementById("callEmail").value.trim();
-                const phone = document.getElementById("callPhone").value.trim();
+              //  const phone = document.getElementById("callPhone").value.trim();
 
                 const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-                const phoneValid = /^[\d\+\-\(\)\s]{6,}$/.test(phone);
+               // const phoneValid = /^[\d\+\-\(\)\s]{6,}$/.test(phone);
 
                 const errorEl = document.getElementById("callFormError");
 
-                if (!name || !emailValid || !phoneValid) {
+                if (!name || !emailValid ) {
                     errorEl.style.display = "block";
                     return;
                 }

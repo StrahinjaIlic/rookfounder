@@ -253,9 +253,9 @@
 
                         .modal-content input {
                             width: 100%;
-                            padding: 12px;
-                            margin-top: 6px;
-                            margin-bottom: 16px;
+                            padding: 8px;
+                            margin-top: 8px;
+                            margin-bottom: 8px;
                             border: 1px solid #ddd;
                             border-radius: 6px;
                             font-size: 16px;
@@ -333,7 +333,7 @@
                             margin: auto;
                             background-color: #ffffff !important;
                             color: #000000 !important;
-                            padding: 40px;
+                            padding: 30px;
                             border-radius: 12px;
                             width: 90%;
                             max-width: 500px;
@@ -704,16 +704,42 @@
                     <input type="email" id="email" placeholder="john@example.com" required />
 
                     <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" placeholder="+1234567890" required />
-                   
-                    <p style="font-size: 14px; color: #dc3545; font-weight: bold; margin-top: 10px;">
-                        *By submitting this form, you agree to receive SMS and email communications from
-                        RookFounder/Natter LLC related to appointment confirmations, review requests, and service
-                        follow-ups. Reply STOP to unsubscribe.
-                    </p>
+                    <input type="tel" id="phone" placeholder="+1234567890" />
+
+                    <div class="checkbox">
+                        <input type="checkbox" id="offer-smsConsent" name="smsConsent">
+                        <label for="offer-smsConsent">
+                            I Consent to Receive SMS Notifications, Alerts from <strong>RookFounder/Natter LLC</strong>.
+                            Message frequency varies. Message & data rates may apply. Text HELP to (+1) 415-915-7044 for
+                            assistance. You can reply STOP to unsubscribe at any time.
+                        </label>
+                    </div>
+
+                    <div class="checkbox">
+                        <input type="checkbox" id="offer-marketingConsent" name="marketingConsent">
+                        <label for="offer-marketingConsent">
+                            By checking this box I agree to receive occasional marketing messages from
+                            <strong>RookFounder/Natter LLC</strong>.
+                        </label>
+                    </div>
+
                     <button type="submit" class="submit-btn">Download PDF</button>
 
-                    <button type="button" class="cancel-btn" onclick="closeOfferModal()">Cancel</button>
+                    <div style="text-align: center; margin-top: 16px; font-size: 14px;">
+                        <a href="/privacy.html" target="_blank" style="color: #3366cc; text-decoration: none;"
+                            onmouseover="this.style.textDecoration='underline'"
+                            onmouseout="this.style.textDecoration='none'">
+                            Privacy Policy
+                        </a>
+                        <span style="color: #888;"> | </span>
+                        <a href="/terms.html" target="_blank" style="color: #3366cc; text-decoration: none;"
+                            onmouseover="this.style.textDecoration='underline'"
+                            onmouseout="this.style.textDecoration='none'">
+                            Terms & Conditions
+                        </a>
+                    </div>
+
+                    <!-- <button type="button" class="cancel-btn" onclick="closeOfferModal()">Cancel</button> -->
 
                     <p id="formError">Please fill in all fields correctly.</p>
                     <div id="successMessage" style="display:none; color:green; font-weight:bold; margin-top:15px;">
@@ -822,7 +848,7 @@
                     <input type="email" id="callEmail" placeholder="john@example.com" required />
 
                     <label for="callPhone">Phone Number</label>
-                    <input type="tel" id="callPhone" placeholder="+1234567890" required />
+                    <input type="tel" id="callPhone" placeholder="+1234567890" />
 
                     <p style="color: #dc3545; font-weight: 1000; margin-top: 10px; font-size: 14px;">
                         *Best watched after viewing the video
@@ -839,14 +865,38 @@
                             video?</label>
                     </div> -->
 
-                    <p style="font-size: 14px; color: #dc3545; font-weight: bold; margin-top: 10px;">
-                       *By submitting this form, you agree to receive SMS and email communications from
-                        RookFounder/Natter LLC related to appointment confirmations, review requests, and service
-                        follow-ups. Reply STOP to unsubscribe.
-                    </p>
+                    <div class="checkbox">
+                        <input type="checkbox" id="call-smsConsent" name="smsConsent">
+                        <label for="call-smsConsent" class="checkbox-label">
+                            I Consent to Receive SMS Notifications, Alerts from <strong>RookFounder/Natter LLC</strong>.
+                            Message frequency varies. Message & data rates may apply. Text HELP to (+1) 415-915-7044 for
+                            assistance. You can reply STOP to unsubscribe at any time.
+                        </label>
+                    </div>
+
+                    <div class="checkbox">
+                        <input type="checkbox" id="call-marketingConsent" name="marketingConsent">
+                        <label for="call-marketingConsent" class="checkbox-label">
+                            By checking this box I agree to receive occasional marketing messages from
+                            <strong>RookFounder/Natter LLC</strong>.
+                        </label>
+                    </div>
+
                     <button type="submit" class="submit-btn" id="bookBtn">Continue</button>
 
-                    <button type="button" class="cancel-btn" onclick="closeCallModal()">Cancel</button>
+                    <div style="text-align: center; margin-top: 15px; font-size: 14px;">
+                        <a href="/privacy.html" target="_blank" style="color: #3366cc; text-decoration: none;"
+                            onmouseover="this.style.textDecoration='underline'"
+                            onmouseout="this.style.textDecoration='none'">
+                            Privacy Policy
+                        </a>
+                        <span style="color: #888;"> | </span>
+                        <a href="/terms.html" target="_blank" style="color: #3366cc; text-decoration: none;"
+                            onmouseover="this.style.textDecoration='underline'"
+                            onmouseout="this.style.textDecoration='none'">
+                            Terms & Conditions
+                        </a>
+                    </div>
                 </form>
             </div>
         </div>
@@ -900,7 +950,7 @@
                 margin: auto;
                 background-color: #ffffff !important;
                 color: #000000 !important;
-                padding: 40px;
+                padding: 30px;
                 border-radius: 12px;
                 width: 90%;
                 max-width: 500px;

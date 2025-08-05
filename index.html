@@ -885,20 +885,6 @@
                 errorMsg.style.display = "none";
                 document.getElementById("loadingSpinner").style.display = "block";
 
-                const url = TEST_MODE
-                    ? `https://bajo.app.n8n.cloud/webhook-test/cb2a1087-0cfd-465e-bde9-ab0988eb7f9b?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&phone=${encodeURIComponent(phone)}`
-                    : "https://natterllc.app.n8n.cloud/webhook/test-payment";
-
-                try {
-                    await fetch(url, {
-                        method: TEST_MODE ? "GET" : "POST",
-                        headers: { "Content-Type": "application/json" },
-                        body: TEST_MODE ? undefined : JSON.stringify({ name, email, phone })
-                    });
-                } catch (error) {
-                    console.warn("N8N fallback aktiviran:", error);
-                }
-
                 // PDF i uspešna poruka idu svakako
                 const link = document.createElement("a");
                 link.href = "assets/the_offer.pdf";
@@ -1018,7 +1004,8 @@
                 }
 
                 errorEl.style.display = "none";
-                window.open("https://api.leadconnectorhq.com/widget/booking/72EBJkZN8XY4QdjlvAmW", "_blank");
+              //  https://api.leadconnectorhq.com/widget/booking/72EBJkZN8XY4QdjlvAmW
+                window.open("https://api.leadconnectorhq.com/widget/booking/ChnWfr7kJFHXN2VoW8nL", "_blank");
 
 
                 closeCallModal();

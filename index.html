@@ -425,6 +425,37 @@
                                     padding: 20px 15px !important;
                                 }
                             }
+
+                            /* === Mobile: smanji razmake oko hero sekcije === */
+                            @media (max-width: 600px) {
+
+                                /* ukloni <br> koji prave ogroman vertikalni razmak */
+                                #title-section br {
+                                    display: none !important;
+                                }
+
+                                /* stisni razmak ispod prvog h2 (logo) */
+                                #title-section>h2:first-of-type {
+                                    padding-bottom: 10px !important;
+                                    margin-bottom: 5px !important;
+                                }
+
+                                /* ukloni dodatni padding u unutrašnjem title-section div-u */
+                                #title-section>div {
+                                    padding-top: 0 !important;
+                                }
+
+                                /* stisni razmak iznad i ispod h3 */
+                                #title-section h3 {
+                                    margin-top: 5px !important;
+                                    margin-bottom: 10px !important;
+                                }
+
+                                /* smanji razmak između hero i video sekcije */
+                                .inner-text>div:nth-of-type(2) {
+                                    margin-top: 10px !important;
+                                }
+                            }
                         }
                     </style>
 

@@ -817,7 +817,7 @@
             }
         </script>
 
-        <!-- Improved Modal form -->
+        <!-- Improved Modal form DOWNLOAD PDF SUBMIT -->
         <div id="offerModal" class="modal">
             <div class="modal-content">
                 <span class="close-button" onclick="closeOfferModal()">&times;</span>
@@ -903,6 +903,8 @@
 
             const TEST_MODE = false; // setuj na false kada prelazis u produkciju
 
+            const OFFER_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/l1mOZ3ROC6wpVwKF7tNH/webhook-trigger/0ecf0c1b-5fde-48c2-bfea-4053c2ccb162';
+
             form.addEventListener("submit", async function (e) {
                 e.preventDefault();
 
@@ -918,10 +920,21 @@
                     return;
                 }
 
-                await fetch("https://services.leadconnectorhq.com/hooks/l1mOZ3ROC6wpVwKF7tNH/webhook-trigger/37c102b8-4fea-442b-8924-7b4b2cc2770a", {
+                // await fetch("https://services.leadconnectorhq.com/hooks/l1mOZ3ROC6wpVwKF7tNH/webhook-trigger/37c102b8-4fea-442b-8924-7b4b2cc2770a", {
+                //     method: "POST",
+                //     headers: { "Content-Type": "application/json" },
+                //     body: JSON.stringify({ name, email, phone })
+                // });
+
+
+                await fetch(OFFER_WEBHOOK, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ name, email, phone })
+                    body: JSON.stringify({
+                        name: document.getElementById("name").value.trim(),
+                        email: document.getElementById("email").value.trim(),
+                        phone: document.getElementById("phone").value.trim()
+                    })
                 });
 
                 errorMsg.style.display = "none";
@@ -948,6 +961,7 @@
         </script>
 
         <!-- Book a Free Call Modal (visually aligned with offer modal) -->
+
         <div id="callModal" class="modal">
             <div class="modal-content">
                 <span class="close-button" onclick="closeCallModal()">&times;</span>

@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5-Star Review System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            overflow: hidden;
+        }
+
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide {
+            display: none;
+            text-align: center;
+            padding: 40px;
+            max-width: 1000px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideInLeft {
+            from { transform: translateX(-100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slideInRight {
+            from { transform: translateX(100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        h1 {
+            font-size: 3.5em;
+            margin-bottom: 30px;
+            background: linear-gradient(45deg, #ff6b6b, #ffa500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: pulse 2s infinite;
+        }
+
+        h2 {
+            font-size: 2.8em;
+            margin-bottom: 25px;
+            color: #ffcc02;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        h3 {
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            color: #4ecdc4;
+        }
+
+        .big-number {
+            font-size: 5em;
+            font-weight: bold;
+            color: #ff6b6b;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+            animation: bounce 2s infinite;
+            margin: 20px 0;
+        }
+
+        .highlight {
+            background: linear-gradient(45deg, #ff6b6b, #ffa500);
+            padding: 5px 15px;
+            border-radius: 25px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 10px 5px;
+            animation: pulse 1.5s infinite;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .feature-box {
+            background: rgba(255,255,255,0.1);
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        .feature-box:nth-child(even) {
+            animation: slideInRight 0.8s ease-out;
+        }
+
+        .price-box {
+            background: linear-gradient(45deg, #ff6b6b, #ffa500);
+            padding: 30px;
+            border-radius: 20px;
+            margin: 30px auto;
+            max-width: 600px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            animation: pulse 2s infinite;
+        }
+
+        .comparison-table {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .comparison-box {
+            background: rgba(255,255,255,0.1);
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+
+        .traditional {
+            border-color: #ff6b6b;
+        }
+
+        .our-system {
+            border-color: #4ecdc4;
+            background: rgba(78, 205, 196, 0.1);
+        }
+
+        .guarantee-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .guarantee-box {
+            background: rgba(76, 175, 80, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            border: 2px solid #4caf50;
+            animation: slideInLeft 1s ease-out;
+        }
+
+        .guarantee-box:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .guarantee-box:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        .timeline {
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            animation: slideInRight 0.8s ease-out;
+        }
+
+        .timeline-week {
+            background: #4ecdc4;
+            color: #000;
+            padding: 10px 15px;
+            border-radius: 50%;
+            margin-right: 20px;
+            font-weight: bold;
+            min-width: 60px;
+            text-align: center;
+        }
+
+        .navigation {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-btn {
+            background: rgba(255,255,255,0.2);
+            border: 2px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+
+        .slide-counter {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 16px;
+        }
+
+        .bullet-points {
+            text-align: left;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .bullet-points li {
+            font-size: 1.3em;
+            margin: 15px 0;
+            padding-left: 10px;
+            animation: slideInLeft 0.6s ease-out;
+        }
+
+        .bullet-points li:nth-child(odd) {
+            animation: slideInRight 0.6s ease-out;
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 40px 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            animation: bounce 2s infinite;
+        }
+
+        .stat-item:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+
+        .stat-item:nth-child(3) {
+            animation-delay: 1s;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, #ff6b6b, #ffa500);
+            color: white;
+            padding: 20px 40px;
+            font-size: 1.8em;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            margin: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            animation: pulse 2s infinite;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+
+        p {
+            font-size: 1.4em;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+
+        .small-text {
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow-container">
+        <div class="slide-counter">
+            <span id="current-slide">1</span> / <span id="total-slides">20</span>
+        </div>
+
+        <!-- Slide 1: Title -->
+        <div class="slide active">
+            <h1>5-Star Review System</h1>
+            <h2>Massively Increase Your Reviews</h2>
+            <p class="highlight">Legally Block Bad Reviews</p>
+            <p class="highlight">Rank at the Top of Google Maps</p>
+            <div class="big-number">30%+</div>
+            <p>Revenue Increase Without Extra Ad Spend</p>
+        </div>
+
+        <!-- Slide 2: The Problem -->
+        <div class="slide">
+            <h2>The Problem</h2>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="big-number">22%</div>
+                    <p>Business Lost from<br>One Bad Review</p>
+                    <p class="small-text">(Qualtrics International)</p>
+                </div>
+                <div class="stat-item">
+                    <div class="big-number">90%</div>
+                    <p>Check Reviews<br>Before Purchase</p>
+                </div>
+                <div class="stat-item">
+                    <div class="big-number">85%</div>
+                    <p>Don't Trust Reviews<br>Older Than 3 Months</p>
+                    <p class="small-text">(BrightLocal)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Manual Process Problems -->
+        <div class="slide">
+            <h2>Current Manual Process</h2>
+            <ul class="bullet-points">
+                <li>❌ Awkward to ask for reviews in person</li>
+                <li>❌ Hours lost every day to manual follow-ups</li>
+                <li>❌ Inconsistent review collection</li>
+                <li>❌ No filter for unhappy customers</li>
+                <li>❌ Generic, low-response requests</li>
+            </ul>
+            <p class="highlight">You're losing customers while you sleep</p>
+        </div>
+
+        <!-- Slide 4: How Our System Works -->
+        <div class="slide">
+            <h2>How Our System Works</h2>
+            <div class="feature-grid">
+                <div class="feature-box">
+                    <h3>1. Filter First</h3>
+                    <p>Check satisfaction before requesting reviews</p>
+                </div>
+                <div class="feature-box">
+                    <h3>2. Ask for Advice</h3>
+                    <p>Turn unhappy customers into advisors</p>
+                </div>
+                <div class="feature-box">
+                    <h3>3. "No-Based" Questions</h3>
+                    <p>Psychology-proven higher response rates</p>
+                </div>
+                <div class="feature-box">
+                    <h3>4. AI Responses</h3>
+                    <p>Personalized, natural replies to all reviews</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: No-Based Questions -->
+        <div class="slide">
+            <h2>The Psychology Behind "No-Based" Questions</h2>
+            <div class="comparison-table">
+                <div class="comparison-box traditional">
+                    <h3>❌ Traditional</h3>
+                    <p>"Would you leave us a review?"</p>
+                    <br>
+                    <p>Makes people feel <strong>exposed and tricked</strong></p>
+                </div>
+                <div class="comparison-box our-system">
+                    <h3>✅ Our Method</h3>
+                    <p>"Would it be too much trouble to leave us a review?"</p>
+                    <br>
+                    <p>Makes people feel <strong>safe and secure</strong></p>
+                </div>
+            </div>
+            <div class="highlight">Higher Response Rates Through Human Psychology</div>
+        </div>
+
+        <!-- Slide 6: AI Response Benefits -->
+        <div class="slide">
+            <h2>AI-Powered Review Responses</h2>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="big-number">1.7x</div>
+                    <p>More Trustworthy<br>When You Respond</p>
+                    <p class="small-text">(Harvard Business Review + TripAdvisor)</p>
+                </div>
+            </div>
+            <ul class="bullet-points">
+                <li>✅ Personalized with customer names</li>
+                <li>✅ Natural timing delays</li>
+                <li>✅ Your brand voice (professional, funny, formal)</li>
+                <li>✅ 100% automated</li>
+            </ul>
+        </div>
+
+        <!-- Slide 7: SEO Benefits -->
+        <div class="slide">
+            <h2>SEO & Ranking Benefits</h2>
+            <div class="feature-grid">
+                <div class="feature-box">
+                    <h3>Reviews = 15% of SEO</h3>
+                    <p>100% if you don't have a website</p>
+                </div>
+                <div class="feature-box">
+                    <h3>Latest AI SEO Hacks</h3>
+                    <p>Unknown to most agencies</p>
+                </div>
+                <div class="feature-box">
+                    <h3>Top 3 Google Maps</h3>
+                    <p>In weeks, not months or years</p>
+                </div>
+                <div class="feature-box">
+                    <h3>AI Search Optimization</h3>
+                    <p>ChatGPT & AI tool compatibility</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Additional Features -->
+        <div class="slide">
+            <h2>Bonus Features Included</h2>
+            <ul class="bullet-points">
+                <li>📱 <strong>Missed Call Text-Back</strong> - Instant SMS to every missed call</li>
+                <li>💬 <strong>Website AI Chatbot</strong> - Answers questions, handles objections</li>
+                <li>🔄 <strong>All Future Updates</strong> - Every new feature at no extra cost</li>
+                <li>📸 <strong>Social Media Automation</strong> - Screenshots reviews, posts automatically</li>
+            </ul>
+            <div class="highlight">Each Feature Could Pay for the Entire System</div>
+        </div>
+
+        <!-- Slide 9: Traditional vs Our System -->
+        <div class="slide">
+            <h2>Traditional Agency vs Our System</h2>
+            <div class="comparison-table">
+                <div class="comparison-box traditional">
+                    <h3>❌ Traditional Agency</h3>
+                    <ul class="small-text">
+                        <li>Blasts requests to everyone</li>
+                        <li>Generic questions</li>
+                        <li>Defensive responses</li>
+                        <li>$3,000-$5,000 setup fee</li>
+                        <li>$1,500+/month minimum</li>
+                    </ul>
+                </div>
+                <div class="comparison-box our-system">
+                    <h3>✅ Our System</h3>
+                    <ul class="small-text">
+                        <li>Filters clients first</li>
+                        <li>Psychology-proven questions</li>
+                        <li>Empathetic advice requests</li>
+                        <li>$0 setup fee</li>
+                        <li>$750/month locked for life</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Pricing -->
+        <div class="slide">
+            <h2>Investment</h2>
+            <div class="price-box">
+                <div class="big-number">$0</div>
+                <p>Setup Fee</p>
+                <hr style="margin: 20px 0; opacity: 0.3;">
+                <div class="big-number">$750</div>
+                <p>Per Month - Locked for Life</p>
+                <p class="small-text">+ $10-20 monthly phone costs</p>
+            </div>
+            <p>Normal agency pricing: $3,000-$5,000 setup + $1,500+/month</p>
+        </div>
+
+        <!-- Slide 11: Features & Value -->
+        <div class="slide">
+            <h2>What's Included</h2>
+            <ul class="bullet-points">
+                <li>🌟 <strong>5-Star Review System</strong> - $500/month value</li>
+                <li>🚀 <strong>AI SEO Hacks</strong> - $1,500/month value</li>
+                <li>📱 <strong>Missed Call Text-Back</strong> - $200-300/month value</li>
+                <li>💬 <strong>Website AI Chatbot</strong> - $300-500/month value</li>
+                <li>🔄 <strong>All Future Features</strong> - Hundreds in value</li>
+            </ul>
+            <div class="highlight">Total Value: $2,500-3,000+/month</div>
+        </div>
+
+        <!-- Slide 12: Guarantees -->
+        <div class="slide">
+            <h2>Our Guarantees</h2>
+            <div class="guarantee-grid">
+                <div class="guarantee-box">
+                    <h3>30 Days</h3>
+                    <p><strong>Technical Guarantee</strong></p>
+                    <p>Full refund if anything doesn't work perfectly</p>
+                </div>
+                <div class="guarantee-box">
+                    <h3>60 Days</h3>
+                    <p><strong>Results Guarantee</strong></p>
+                    <p>Full refund if no steady 5-star review flow</p>
+                </div>
+                <div class="guarantee-box">
+                    <h3>90 Days</h3>
+                    <p><strong>SEO Guarantee</strong></p>
+                    <p>Full refund if not ranking on page one</p>
+                </div>
+            </div>
+            <div class="highlight">If We Don't Perform, You Don't Pay</div>
+        </div>
+
+        <!-- Slide 13: Timeline -->
+        <div class="slide">
+            <h2>When You See Results</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-week">Week 1</div>
+                    <p>5-Star Review System fully live in 5 working days</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-week">Week 2</div>
+                    <p>TextBack + Chatbot + Voicebot added</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-week">Week 3</div>
+                    <p>SEO ranking boost most likely visible</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-week">Month 1</div>
+                    <p>80% of all results visible</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 14: Who This Is NOT For -->
+        <div class="slide">
+            <h2>Who This Is NOT For</h2>
+            <ul class="bullet-points">
+                <li>❌ Uncomfortable sharing results semi-publicly</li>
+                <li>❌ No long-term business plan</li>
+                <li>❌ Looking for a quick fix only</li>
+                <li>❌ Not ready to commit to success</li>
+            </ul>
+            <div class="highlight">We're Building Case Studies - That's Why the Low Price</div>
+        </div>
+
+        <!-- Slide 15: Limited Availability -->
+        <div class="slide">
+            <h2>Limited Availability</h2>
+            <div class="big-number">12</div>
+            <p>Selected Clients Only Before Full Launch</p>
+            <br>
+            <p>We'll work closely with you to build and document your success story</p>
+            <div class="highlight">This is the ONLY reason for such a low price</div>
+        </div>
+
+        <!-- Slide 16: Future Pricing -->
+        <div class="slide">
+            <h2>Future Pricing (December Launch)</h2>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="big-number">$10K</div>
+                    <p>Setup Fee</p>
+                </div>
+                <div class="stat-item">
+                    <div class="big-number">$1,500</div>
+                    <p>Minimum Monthly</p>
+                </div>
+            </div>
+            <div class="highlight">Join Now: Skip $10K Setup + Lock in $750/month Forever</div>
+        </div>
+
+        <!-- Slide 17: Complete System Preview -->
+        <div class="slide">
+            <h2>Complete System (December)</h2>
+            <ul class="bullet-points">
+                <li>🤖 All chatbots, agents, voicebots connected</li>
+                <li>📅 Integrated with your calendar and phone</li>
+                <li>📊 Complete client pipeline management software</li>
+                <li>👥 Worker qualification system</li>
+                <li>⚡ Everything automated in your business</li>
+            </ul>
+            <div class="highlight">Your Only Problem Will Be Hiring More People</div>
+        </div>
+
+        <!-- Slide 18: Special Limited Offer -->
+        <div class="slide">
+            <h2>Special Offer - Before August 15</h2>
+            <div class="price-box">
+                <div class="big-number">3</div>
+                <p>Spots Available</p>
+                <hr style="margin: 20px 0; opacity: 0.3;">
+                <div class="big-number">$450</div>
+                <p>Per Month - Locked Forever</p>
+                <p>+ VoiceBot Included</p>
+            </div>
+            <div class="highlight">Reward for First Action-Takers</div>
+        </div>
+
+        <!-- Slide 19: The Cost of Waiting -->
+        <div class="slide">
+            <h2>The Cost of Waiting</h2>
+            <ul class="bullet-points">
+                <li>💸 Every day losing customers to better online reputations</li>
+                <li>📉 Every ad dollar only half as effective as it could be</li>
+                <li>📞 Missing calls = instant lost customers</li>
+                <li>⏰ Competitors getting ahead while you wait</li>
+            </ul>
+            <div class="highlight">This System Fixes What Happens After People Find You</div>
+        </div>
+
+        <!-- Slide 20: Call to Action -->
+        <div class="slide">
+            <h2>Take Action Now</h2>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <h3>📖</h3>
+                    <p>Read the Offer</p>
+                </div>
+                <div class="stat-item">
+                    <h3>📱</h3>
+                    <p>Test the Automation</p>
+                </div>
+                <div class="stat-item">
+                    <h3>📞</h3>
+                    <p>Book Free Call</p>
+                </div>
+            </div>
+            <button class="cta-button">Get Started Today</button>
+            <p>Only 12 spots available this year</p>
+            <div class="highlight">One-Time Opportunity - Act Now</div>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <button class="nav-btn" onclick="changeSlide(-1)">← Previous</button>
+        <button class="nav-btn" onclick="changeSlide(1)">Next →</button>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = document.querySelectorAll('.slide').length;
+        
+        document.getElementById('total-slides').textContent = totalSlides;
+
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.slide');
+            
+            if (n > totalSlides) currentSlide = 1;
+            if (n < 1) currentSlide = totalSlides;
+            
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[currentSlide - 1].classList.add('active');
+            
+            document.getElementById('current-slide').textContent = currentSlide;
+        }
+
+        function changeSlide(direction) {
+            currentSlide += direction;
+            showSlide(currentSlide);
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'ArrowRight' || event.key === ' ') {
+                changeSlide(1);
+            } else if (event.key === 'ArrowLeft') {
+                changeSlide(-1);
+            }
+        });
+
+        // Initialize
+        showSlide(1);
+    </script>
+</body>
+</html>
